@@ -40,14 +40,28 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="nombre" class="col-md-4 col-form-label text-md-right">{{ __('Nombre De Tu Empresa') }}</label>
+                            <label for="nombreempresa" class="col-md-4 col-form-label text-md-right">{{ __('Nombre De Tu Empresa') }}</label>
 
                             <div class="col-md-6">
-                                <input id="nombre" type="text" class="form-control{{ $errors->has('nombre') ? ' is-invalid' : '' }}" name="nombre" value="{{ old('nombre') }}" required autofocus>
+                                <input id="nombreempresa" type="text" class="form-control{{ $errors->has('nombreempresa') ? ' is-invalid' : '' }}" name="nombreempresa" value="{{ old('nombreempresa') }}" required autofocus>
 
-                                @if ($errors->has('nombre'))
+                                @if ($errors->has('nombreempresa'))
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('nombre') }}</strong>
+                                        <strong>{{ $errors->first('nombreempresa') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="descripcion" class="col-md-4 col-form-label text-md-right">{{ __('Descripcion De Tu Empresa') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="descripcion" type="text" class="form-control{{ $errors->has('descripcion') ? ' is-invalid' : '' }}" name="descripcion" value="{{ old('descripcion') }}" required autofocus>
+
+                                @if ($errors->has('descripcion'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('descripcion') }}</strong>
                                     </span>
                                 @endif
                             </div>

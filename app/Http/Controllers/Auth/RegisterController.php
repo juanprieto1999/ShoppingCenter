@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Models\Persona;
+use App\Models\Empresa;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -31,6 +32,7 @@ class RegisterController extends Controller
      */
     protected $redirectTo = '/';
 
+
     /**
      * Create a new controller instance.
      *
@@ -41,6 +43,15 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+    public function showRegistrationForm($tipo)
+    {
+        if($tipo=='user'){
+            return view('auth.register');
+        }else{
+           return view('auth.registerstore'); 
+        }
+
+    }
     /**
      * Get a validator for an incoming registration request.
      *
@@ -49,6 +60,8 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        if($data['nit']==null) {
+
         return Validator::make($data, [
             'name' => 'required|string|max:255',
             'nombre' => 'required|string',
@@ -57,6 +70,24 @@ class RegisterController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed', //password_confirmation
         ]);
+    }
+        else{
+        return Validator::make($data, [
+            'name' => 'required|string|max:255',
+            'nombreempresa' => 'required|string',
+            'descripcion' => 'string|max:50',
+            'nit'=> 'string|max:10',
+            'direccion'=> 'required|string',
+            'telefono' => 'required|string',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:6|confirmed', //password_confirmation
+
+        ]);
+
+
+}
+
+
     }
 
     /**
@@ -67,19 +98,37 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+ if($data['nit']==null){
+
         $usuario = Persona::create([
             'nombre' => $data['nombre'],
             'direccion' => $data['direccion'],
             'telefono' => $data['telefono'],
             'Estado' => '1',
         ]);
-        //dd($usuario->idpersona); 
+        dd($usuario->idpersona); 
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'idpersona' => $usuario->idpersona,
         ]);
+    }else{
+      $tienda =empresa::create([
+            'Nombre' => $data['nombreempresa'],
+            'Direccion' => $data['direccion'],
+            'Descripcion' => $data['descripcion'],
+            'Nit' => $data['nit'],
+            'telefono' => $data['telefono'],
+            'Estado' => '1',
+        ]);
+        return User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+            'idempresa' => $tienda->idEmpresa,
+        ]);  
        
+    }
     }
 }

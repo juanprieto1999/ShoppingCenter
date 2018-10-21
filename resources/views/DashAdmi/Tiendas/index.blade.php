@@ -29,7 +29,7 @@
 					<td>{{$tiend->Direccion}}</td>
 					<td>{{$tiend->Descripcion}}</td>
 					<td>{{$tiend->Nit}}</td>
-					<td>{{$tiend->Correo}}</td>
+					{{-- <td>{{$tiend->Correo}}</td> --}}
 					<td>{{$tiend->Estado}}</td>
 <td>
 	<a href="{{URL('/store/'.$tiend->idEmpresa)}}"><button class="btn btn-info">Ver</button></a>

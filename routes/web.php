@@ -23,6 +23,8 @@ Route::get('/dashadmin', 'DashBoardAdminController@index');
 Route::get('/dashadmin/stores', 'DashBoardAdminController@tindex');
 
 Auth::routes();
+Route::get('/registro/{tipo}','Auth\RegisterController@showRegistrationForm');
+
 Route::get('store/{id}','storeController@index');
 
 

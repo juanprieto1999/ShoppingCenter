@@ -9,20 +9,20 @@ class empresa extends Model
 {
     protected $table='empresa';
     protected $primaryKey='idEmpresa';
-	public $timestamps=true;
+	public $timestamps=false;
 protected $fillable=[ //permite que columnas seran caragadas en forma masiva
 'idEmpresa',
 'Nombre',
 'Direccion',
 'Descripcion',
 'Nit',
-'Correo',
-'Estado',
-'Imagen'
+'Telefono',
+'Estado'
 
 ];
-public function articulos()
+}
+/*public function articulos()
 	{
 		return $this->hasMany('articulos', 'idEmpresa');
 	}
-    }
+    }*/
