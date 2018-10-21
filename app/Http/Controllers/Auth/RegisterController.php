@@ -47,8 +47,11 @@ class RegisterController extends Controller
     {
         if($tipo=='user'){
             return view('auth.register');
-        }else{
+        }elseif($tipo=='store'){
            return view('auth.registerstore'); 
+        }
+        else{
+            return view('Inicio.inicion');
         }
 
     }
@@ -60,7 +63,7 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        if($data['nit']==null) {
+        if(isset($data['nit'])==false) {
 
         return Validator::make($data, [
             'name' => 'required|string|max:255',
@@ -98,7 +101,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
- if($data['nit']==null){
+ if(isset($data['nit'])==false){
 
         $usuario = Persona::create([
             'nombre' => $data['nombre'],
@@ -106,7 +109,6 @@ class RegisterController extends Controller
             'telefono' => $data['telefono'],
             'Estado' => '1',
         ]);
-        dd($usuario->idpersona); 
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
