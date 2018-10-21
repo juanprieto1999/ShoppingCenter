@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Models\Persona;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -54,7 +55,7 @@ class RegisterController extends Controller
             'direccion'=> 'required|string',
             'telefono' => 'required|string',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
+            'password' => 'required|string|min:6|confirmed', //password_confirmation
         ]);
     }
 
@@ -66,10 +67,19 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $usuario = Persona::create([
+            'nombre' => $data['nombre'],
+            'direccion' => $data['direccion'],
+            'telefono' => $data['telefono'],
+            'Estado' => '1',
+        ]);
+        //dd($usuario->idpersona); 
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'idpersona' => $usuario->idpersona,
         ]);
+       
     }
 }

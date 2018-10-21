@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -12,10 +12,8 @@ public $timestamps=false;
 protected $fillable=[
 'idpersona',
 'nombre',
-'tipo_documento',
-'num_documento',
 'direccion',
-'telefsono',
+'telefono',
 'Estado'
 
 ];
