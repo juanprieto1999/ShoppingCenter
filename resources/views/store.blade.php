@@ -5,6 +5,8 @@
 .imagentienda{
 	position: relative;
 	display: block;	
+	color: #FFFFFF;
+
 }
 #nombretienda{
 	position: absolute;
@@ -20,22 +22,15 @@
 width: 100%;
 height: 300px;
 }
-/*.items{
-margin: 2%; 
-width:95%;
-height: 800px;
-background-image:url('../Imagenes/imgnueva.jpg');
-background-size: 100%;
-background-attachment: fixed;
 
-}*/
 .item{
-border-style: solid;
+
 width: 250px;
 height: 300px;
 margin:3%;
 float: left;
 border-radius:10%;
+
 
 }
 .item img {
@@ -43,8 +38,15 @@ width: 100%;
 height: 70%;
 border-radius: 10%;
 
-}
 
+}
+section h3{
+	font-size:30px;
+	font-family: cursive; 
+}
+section{
+	text-align: center;
+}
 
 }
 </style>
@@ -68,8 +70,8 @@ border-radius: 10%;
 </a>
 <section>
 <h3>{{$art->Nombre}}</h3>
-<p> {{$art->Valor}} </p>
-<button>Add</button>
+<p> valor : $ {{$art->Valor}} </p>
+<button>Agregar</button>
 </section>
 </div>
 @endforeach
