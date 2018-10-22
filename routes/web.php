@@ -16,15 +16,24 @@ Route::get('/', function () {
 });
 
 
+
+
+Auth::routes();
+Route::get('/registro/{tipo}','Auth\RegisterController@showRegistrationForm');
+Route::get('store/{id}','storeController@index');
+
+
+Route::middleware('tienda')->group(function(){
+
 Route::get('/dash', 'DashBoardStoreController@index');
 Route::resource('dash/articulos', 'articulocontroller');
+
+}) ;
+
+
+Route::middleware('admin')->group(function(){
 
 Route::get('/dashadmin', 'DashBoardAdminController@index');
 Route::get('/dashadmin/stores', 'DashBoardAdminController@tindex');
 
-Auth::routes();
-Route::get('/registro/{tipo}','Auth\RegisterController@showRegistrationForm');
-
-Route::get('store/{id}','storeController@index');
-
-
+});
