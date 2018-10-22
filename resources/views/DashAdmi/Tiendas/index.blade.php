@@ -19,8 +19,8 @@
 					<th>Direccion</th>
 					<th>Descripcion</th>
 					<th>Nit</th>
-					<th>Correo</th>
-					<th>Estado</th>
+					
+				
 				</thead>
 				@foreach ($listatiendas as $tiend)
 				<tr>
@@ -30,7 +30,7 @@
 					<td>{{$tiend->Descripcion}}</td>
 					<td>{{$tiend->Nit}}</td>
 					{{-- <td>{{$tiend->Correo}}</td> --}}
-					<td>{{$tiend->Estado}}</td>
+					{{--  <td>{{$tiend->Estado}}</td>--}}
 <td>
 	<a href="{{URL('/store/'.$tiend->idEmpresa)}}"><button class="btn btn-info">Ver</button></a>
 			
