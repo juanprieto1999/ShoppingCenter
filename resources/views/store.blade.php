@@ -5,22 +5,25 @@
 .imagentienda{
 	position: relative;
 	display: block;	
-	color: #FFFFFF;
+	
 
 }
 #nombretienda{
 	position: absolute;
-	bottom: 50%;
-	margin-left: 45%;
-	text-align: center;
-    font-family: 'Nunito', sans-serif;
+	bottom: 30%;
+	margin-left: 40%;
+    font-family: cursive;
     font-weight: 200;
-    font-size: 50px;
+    font-size: 80px;
+	color:#FFFFFF;
+	text-align: center;
+    -webkit-text-stroke-width: 4px;
+    -webkit-text-stroke-color: black;
 }
 
 .imagentienda   img {
 width: 100%;
-height: 300px;
+height: 350px;
 }
 
 .item{

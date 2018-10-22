@@ -17,6 +17,7 @@
                 font-weight: 200;
                 height: 100vh;
                 margin: 0;
+               
 
                 
             }
@@ -34,6 +35,7 @@
                 align-items: center;
                 display: flex;
                 justify-content: center;
+
             }
 
             .position-ref {
@@ -52,6 +54,8 @@
 
             .title {
                 font-size: 100px;
+                -webkit-text-stroke-width: 2px;
+                -webkit-text-stroke-color: black;
             }
 
             .links > a {
@@ -62,6 +66,7 @@
                 letter-spacing: .1rem;
                 text-decoration: none;
                 text-transform: uppercase;
+
             }
 
             .m-b-md {
@@ -84,6 +89,28 @@
             <div class="content">
                 <div class="title m-b-md">
                     Shopping Center
+                </div>
+                
+
+                <div class="links">
+                    <a href="https://laravel.com/docs">Tiendas</a>
+                    <a href="https://laracasts.com">Productos</a>
+                    <a href="https://laravel-news.com">Lo mas vendido!</a>
+                    <a href="https://nova.laravel.com">Promociones</a>
+                    <a href="https://forge.laravel.com">Forge</a>
+                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                </div>
+            </div>
+        </div>
+      </div>   
+    </div>
+    <div class="carousel-item">
+      <img src="{{ asset('Imagenes/tecnologia.jpg') }}" alt="moda" >
+      <div class="carousel-caption">
+          <div class="flex-center position-ref full-height">
+            <div class="content">
+                <div class="title m-b-md">
+                    Tecnologia
                 </div>
                 
 
