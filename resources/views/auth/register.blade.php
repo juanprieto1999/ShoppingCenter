@@ -109,7 +109,16 @@
                                     {{ __('Register') }}
                                 </button>
                             </div>
+                            <div class="col-md-2    ">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Register') }}
+                                </button>
+                            </div>
+
                         </div>
+
+
+
                     </form>
                 </div>
             </div>
