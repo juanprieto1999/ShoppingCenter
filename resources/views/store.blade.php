@@ -11,9 +11,9 @@
 	bottom: 50%;
 	margin-left: 45%;
 	text-align: center;
-font-family: 'Nunito', sans-serif;
-     font-weight: 200;
-     font-size: 50px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 200;
+    font-size: 50px;
 }
 .imagentienda   img {
 width: 100%;
