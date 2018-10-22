@@ -67,6 +67,32 @@ $articulo->Estado='1';
         return ('dash/articulos');
     }
 
+    public function destroy($id)
+    {
+        $estado=DB::table('articulo')->select('Estado')
+        ->where('idArticulo','=',$id)->get();
+        dd($estado->Estado);
+       if($estado->Estado=='1'){
+   $articulo=Articulo::findOrFail($id);
+        $articulo->Estado='0';
+       $articulo->update();  
+       }
+       elseif($estado=='0'){
+        $articulo=Articulo::findOrFail($id);
+        $articulo->Estado='1';
+       $articulo->update();  
+       }
+return Redirect::to('dash/articulos');
+    }
+        
+    public function cambiarestado($id)
+    {
+        $articulo=Articulo::findOrFail($id);
+        $articulo->Estado='0';
+        $articulo->update();
+        return Redirect::to('dash/articulos');
+    }
+
 
 
 }

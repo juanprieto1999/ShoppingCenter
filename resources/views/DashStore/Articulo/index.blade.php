@@ -42,10 +42,11 @@
 					</td>
 
 				 	<td>
-						{{-- <a href="{{URL::action('ArticuloController@edit',$art->idArticulo)}}"><button class="btn btn-info">Editar</button></a>
-						<a href="" data-target="#modal-delete-{{$art->idArticulo}}" data-toggle="modal"><button class="btn btn-danger">Eliminar</button></a> --}}						
+						{{-- <a href="{{URL::action('ArticuloController@edit',$art->idArticulo)}}"><button class="btn btn-info">Editar</button></a>--}}
+						<a href="" data-target="#modal-delete-{{$art->idArticulo}}" data-toggle="modal"><button class="btn btn-secondary">Cambiar Estado</button></a> 						
 					</td>
 				</tr>
+				@include('DashStore.Articulo.modal')
 				@endforeach
 				
 			</table>

@@ -21,6 +21,7 @@ Route::get('/', function () {
 Auth::routes();
 Route::get('/registro/{tipo}','Auth\RegisterController@showRegistrationForm');
 Route::get('store/{id}','storeController@index');
+Route::get('/liststores', 'listatiendaController@index');
 
 
 Route::middleware('tienda')->group(function(){
