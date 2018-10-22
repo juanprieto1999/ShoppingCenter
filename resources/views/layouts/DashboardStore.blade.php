@@ -41,8 +41,14 @@
           <!-- Navbar Right Menu -->         
           <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
+               <li id="irtienda">
+              <a href="{{ url('store/2')}}">
+                <span>Ir a la tienda</span>
+      </a>
+      
+              </li>
               <li class="dropdown user user-menu">
-              <h3>{{ Auth::user()->name }}</h3>
+              <h3>Bienvenido! {{ Auth::user()->name }}</h3>
 
               </li>
 

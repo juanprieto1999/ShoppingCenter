@@ -53,6 +53,18 @@ public function create()
 return Redirect::to('dash/articulos');
    
     }
+
+   public function edit($id)
+    {
+        $articulo=Articulo::findOrFail($id);
+        $categorias=DB::table('categoria')->where('Condicion','=','1')->get();
+        return view("DashStore.Articulo.edit",["articulo"=>$articulo,"categorias"=>$categorias]);
+    }
+
+
+
+    
+
     //Cambia el estado de la tienda en el daashboard admin
     public function turn($id)
     {
@@ -68,31 +80,16 @@ $articulo->Estado='1';
     }
 
     public function destroy($id)
-    {
-        $estado=DB::table('articulo')->select('Estado')
-        ->where('idArticulo','=',$id)->get();
-        dd($estado->Estado);
-       if($estado->Estado=='1'){
-   $articulo=Articulo::findOrFail($id);
+   {
+    $articulo=articulo::findOrFail($id);
+    if($articulo->Estado==1){
         $articulo->Estado='0';
-       $articulo->update();  
-       }
-       elseif($estado=='0'){
-        $articulo=Articulo::findOrFail($id);
+    }else{
         $articulo->Estado='1';
-       $articulo->update();  
+    }
+    $articulo->update();
+
+    return Redirect::to('dash/articulos');
+
        }
-return Redirect::to('dash/articulos');
-    }
-        
-    public function cambiarestado($id)
-    {
-        $articulo=Articulo::findOrFail($id);
-        $articulo->Estado='0';
-        $articulo->update();
-        return Redirect::to('dash/articulos');
-    }
-
-
-
 }
