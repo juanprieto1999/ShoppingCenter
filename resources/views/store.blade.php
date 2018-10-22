@@ -15,32 +15,43 @@
     font-weight: 200;
     font-size: 50px;
 }
+
 .imagentienda   img {
 width: 100%;
 height: 300px;
 }
-.items{
+/*.items{
 margin: 2%; 
 width:95%;
 height: 800px;
-border-style: solid;
-}
+background-image:url('../Imagenes/imgnueva.jpg');
+background-size: 100%;
+background-attachment: fixed;
+
+}*/
 .item{
-	border-style: solid;
+border-style: solid;
 width: 250px;
 height: 300px;
-margin:2%;
+margin:3%;
 float: left;
+border-radius:10%;
+
 }
 .item img {
 width: 100%;
 height: 70%;
+border-radius: 10%;
 
 }
 
 
 }
 </style>
+
+<body>
+	
+
 @foreach ($empresa as $empre)
 <div class="imagentienda">
 <img src="{{ asset('Imagenes/Empresa/'.$empre->Nombre.'/'.$empre->Imagen)}}" >
@@ -48,9 +59,10 @@ height: 70%;
 </div>
 @endforeach
 <div class="items">
-
+<HEADER>
 @foreach ($articulos as $art)
 <div class="item">
+
 <a>
 <img src="{{asset('Imagenes/Empresa/'.$art->empresa.'/'.$art->Imagen)}}"   >
 </a>
@@ -68,3 +80,5 @@ height: 70%;
 
 
 @endsection
+
+</body>
