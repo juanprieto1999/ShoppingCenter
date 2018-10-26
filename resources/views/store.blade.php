@@ -55,8 +55,6 @@ section{
 </style>
 
 <body>
-	
-
 @foreach ($empresa as $empre)
 <div class="imagentienda">
 <img src="{{ asset('Imagenes/Empresa/'.$empre->Nombre.'/'.$empre->Imagen)}}" >

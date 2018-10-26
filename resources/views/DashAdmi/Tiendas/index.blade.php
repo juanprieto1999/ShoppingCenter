@@ -19,6 +19,7 @@
 					<th>Direccion</th>
 					<th>Descripcion</th>
 					<th>Nit</th>
+					<th>Estado</th>
 					
 				
 				</thead>
@@ -30,17 +31,21 @@
 					<td>{{$tiend->Descripcion}}</td>
 					<td>{{$tiend->Nit}}</td>
 					{{-- <td>{{$tiend->Correo}}</td> --}}
-					{{--  <td>{{$tiend->Estado}}</td>--}}
+					
+					<td>@if($tiend->Estado ==1)
+						{{ 'En Servicio' }}
+						@else
+						{{ 'Fuera De Servicio' }}
+						@endif
+						</td>
 <td>
 	<a href="{{URL('/store/'.$tiend->idEmpresa)}}"><button class="btn btn-info">Ver</button></a>
+	<a href="" data-target="#modal-delete-{{$tiend->idEmpresa}}" data-toggle="modal"><button class="btn btn-secondary">Cambiar Estado</button></a>
 			
 </td>
-					{{-- <td>
-						<a href="{{URL::action('ArticuloController@edit',$art->idArticulo)}}"><button class="btn btn-info">Editar</button></a>
-						<a href="" data-target="#modal-delete-{{$art->idArticulo}}" data-toggle="modal"><button class="btn btn-danger">Eliminar</button></a>						
-					</td>--}}
+					
 				</tr>
-				{{-- @include('almacen.articulo.modal'--}}
+				@include('DashAdmi.Tiendas.modal')
 				@endforeach
 				
 			</table>

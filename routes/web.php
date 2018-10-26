@@ -20,14 +20,14 @@ Route::get('/', function () {
 
 Auth::routes();
 Route::get('/registro/{tipo}','Auth\RegisterController@showRegistrationForm');
-Route::get('store/{id}','storeController@index');
+Route::get('store/{id}','storeController@index')->where(['id' => '[\d]+']);
 Route::get('/liststores', 'listatiendaController@index');
 
 
 Route::middleware('tienda')->group(function(){
-
 Route::get('/dash', 'DashBoardStoreController@index');
 Route::resource('dash/articulos', 'articulocontroller');
+
 
 }) ;
 
@@ -36,5 +36,5 @@ Route::middleware('admin')->group(function(){
 
 Route::get('/dashadmin', 'DashBoardAdminController@index');
 Route::get('/dashadmin/stores', 'DashBoardAdminController@tindex');
-
+Route::resource('store', 'storeController');
 });
