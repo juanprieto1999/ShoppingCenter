@@ -42,7 +42,7 @@
 					</td>
 
 				 	<td>
-						 {{-- <a href="{{URL::action('articulocontroller@edit',$art->idArticulo)}}"><button class="btn btn-info">Editar</button></a> --}}
+						 <a href="{{URL::action('articulocontroller@edit',$art->idArticulo)}}"><button class="btn btn-info">Editar</button></a> 
 						<a href="" data-target="#modal-delete-{{$art->idArticulo}}" data-toggle="modal"><button class="btn btn-secondary">Cambiar Estado</button></a> 						
 					</td>
 				</tr>

@@ -56,9 +56,30 @@ return Redirect::to('dash/articulos');
 
    public function edit($id)
     {
+        $profession=empresa::find(auth()->user()->idempresa);
         $articulo=Articulo::findOrFail($id);
         $categorias=DB::table('categoria')->where('Condicion','=','1')->get();
-        return view("DashStore.Articulo.edit",["articulo"=>$articulo,"categorias"=>$categorias]);
+        return view("DashStore.Articulo.edit",["articulo"=>$articulo,"categorias"=>$categorias,"empresa"=>$profession]);
+    }
+
+    public function update(ArticuloFormRequets $request,$id){
+        $empresa=empresa::find(auth()->user()->idempresa);
+$articulo=Articulo::findOrFail($id);
+$articulo->idCategoria=$request->get('idCategoria');
+        $articulo->Nombre=$request->get('Nombre');
+        $articulo->Codigo=$request->get('Codigo');
+        $articulo->Stock=$request->get('Stock');
+        $articulo->Descripcion=$request->get('Descripcion');
+        $articulo->Estado='1';
+        $articulo->Valor=$request->get('Valor');
+        if(Input::hasFile('Imagen')){
+            $file=Input::file('Imagen');
+            $file->move(public_path().'/imagenes/Empresa/'.$empresa->Nombre.'/',$file->getClientOriginalName());//Obtener El Nombre
+            $articulo->imagen=$file->getClientOriginalName();
+        }
+$articulo->update();
+
+return Redirect::to('dash/articulos');
     }
 
 
@@ -66,18 +87,6 @@ return Redirect::to('dash/articulos');
     
 
     //Cambia el estado de la tienda en el daashboard admin
-    public function turn($id)
-    {
-    $articulo=articulo::findOrFail($id);
-    if($articulo->Estado==1){
-$articulo->Estado='0';
-    }else{
-$articulo->Estado='1';
-    }
-    $articulo->update();
-
-        return ('dash/articulos');
-    }
 
     public function destroy($id)
    {
