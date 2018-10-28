@@ -4,10 +4,9 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="{{ asset('js/jquery-3.3.1.min.js') }}" ></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-
-
         <style>
             html, body {
                /*background-image: url(/imagen/wal22.jpg);*/
@@ -73,6 +72,27 @@
                 margin-bottom: 30px;
             }
         </style>
+  <script>
+   
+var listProduct = function()
+  {
+  
+      $.ajax({
+          type:'get',
+          url:'{{ url('/liststores')}}',
+          success: function(data){
+              $('#lista-tiendas').empty().html(data);
+          }
+      });
+
+
+  }
+
+
+ </script>
+
+
+
     </head>
     <body>
         <div id="demo" class="carousel slide" data-ride="carousel">
@@ -93,17 +113,18 @@
                 
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Tiendas</a>
-                    <a href="https://laracasts.com">Productos</a>
+                    <a href='javascript:;' onclick="listProduct();" data-toggle="modal" data-target="#modal-listatiendas" >Tiendas</a>
                     <a href="https://laravel-news.com">Lo mas vendido!</a>
                     <a href="https://nova.laravel.com">Promociones</a>
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+                </div>                     
             </div>
+
         </div>
       </div>   
     </div>
+
     <div class="carousel-item">
       <img src="{{ asset('Imagenes/tecnologia.jpg') }}" alt="moda" >
       <div class="carousel-caption">
@@ -134,8 +155,6 @@
                 <div class="title m-b-md">
                     Comidas
                 </div>
-                
-
                 <div class="links">
                     <a href="https://laravel.com/docs">Tiendas</a>
                     <a href="https://laracasts.com">Productos</a>
@@ -177,9 +196,8 @@
   <a class="carousel-control-next" href="#demo" data-slide="next">
     <span class="carousel-control-next-icon"></span>
   </a>
-</div>
-
-        
+   @include('Inicio.storeslist')
+</div> 
     </body>
 </html>
 @endsection

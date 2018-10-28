@@ -10,4 +10,5 @@ class listatiendaController extends Controller
     {
         return view('Inicio.storeslist');
     }
+
 }

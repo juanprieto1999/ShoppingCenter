@@ -16,12 +16,11 @@ Route::get('/', function () {
 });
 
 
-
-
 Auth::routes();
 Route::get('/registro/{tipo}','Auth\RegisterController@showRegistrationForm');
 Route::get('store/{id}','storeController@index')->where(['id' => '[\d]+']);
-Route::get('/liststores', 'listatiendaController@index');
+Route::get('/liststores', 'inicioController@listatiendas');
+
 
 
 Route::middleware('tienda')->group(function(){

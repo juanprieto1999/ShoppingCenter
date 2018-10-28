@@ -1,38 +1,23 @@
-@extends('layouts.encabezado')
-@section('content')
-<head>
+<div class="modal fade" id="modal-listatiendas" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+  
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-
-
-        <style>
-           body {
-               background-image: url(/imagenes/t4.jpg);
-               background-size:100%,100%;
-               background-repeat: no-repeat;
-            }
-            .contenido{
-                border-style: solid;
-                width:100%;
-                height:100px;
-                margin:8px; 
-                background-color: white;
-                
-     }
-
-            
-        </style>
-    </head>
-    <body>
-       <div class="contenido">
-       
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <div id="lista-tiendas">
 
        </div>
-
-        
-    </body>
-</html>
-@endsection
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

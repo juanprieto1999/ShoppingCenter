@@ -1,13 +1,15 @@
 @extends ('layouts.DashboardAdmin')
 @section ('contenido')
 
-
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
 		<h3>Listado De Tiendas</h3>
 		{{--  @include('Tiendas.search')--}}
 	</div>
 </div>
+<div id="listatienda" name="listatienda">
+
+       </div>
 
 <div class="row">
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
