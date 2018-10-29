@@ -8,7 +8,15 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js" type="text/javascript"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   </head>
+  <style>
+    body{
+     padding-top: 5%;
+    }
+  </style>
   <body>
+
+
+
     <script type="text/javascript">
      $(document).ready(function() {
   $('#titulo').hide(0);
@@ -27,9 +35,16 @@
         }
                    });
                 });
-</script>
 
-      <nav class="navbar fixed-top navbar-expand-lg navbar-light ">
+function medidas(id){
+    return {w:document.getElementById(id).offsetWidth,h:document.getElementById(id).offsetHeight}
+}
+
+
+
+</script>
+<header>
+<nav class="navbar fixed-top navbar-expand-lg navbar-light " id="navid" name="navid">
 
      <div id="titulo"  >
      <!-- <h1>ShoppingCenter</h1>-->
@@ -82,9 +97,15 @@
 
 </ul>
       </nav>
+</header>
+
+@yield('content')
+    
 
 
-    @yield('content')
+
+
+
 
   </body>
 </html>

@@ -5,5 +5,9 @@ h1{
   color: rgba(214, 0, 0, 0.8);
 }
 nav{
-	background-color:rgba(155,158,157,0.42); 
+	background-color:rgba(155,158,157,0.42);
+
 }
+body{
+     padding-top: 5%;
+    }
