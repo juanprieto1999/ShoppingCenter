@@ -21,8 +21,9 @@ class searchController extends Controller
    		$query=trim($request->get('searchText')); 
 		$articulos=DB::table('articulo as a')
     	->join('categoria as c','a.idCategoria','=','c.idCategoria')
-    	->select('a.idArticulo','a.Nombre','a.Codigo','a.Stock','a.Descripcion','c.Nombre as categoria','a.Imagen','a.Estado','a.Valor','a.idEmpresa')
-    ->where('a.Nombre','LIKE','%'.$query.'%')->orwhere('c.Nombre','LIKE','%'.$query.'%')->get();
+    	->join('empresa as emp','a.idEmpresa','=','emp.idEmpresa')
+    	->select('a.idArticulo','a.Nombre','a.Codigo','a.Stock','a.Descripcion','c.Nombre as categoria','emp.Nombre as nempresa','a.Imagen','a.Estado','a.Valor','a.idEmpresa')
+    ->where('a.Nombre','LIKE','%'.$query.'%')->orwhere('c.Nombre','LIKE','%'.$query.'%')->orwhere('emp.Nombre','LIKE','%'.$query.'%')->get();
 
 
 	//$articulos= Articulo::all();

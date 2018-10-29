@@ -47,6 +47,7 @@
 <p> valor : $ {{$art->Valor}} </p>
 <p> empresa: {{$art->idEmpresa}} </p>
 <p> categoria: {{$art->categoria}} </p>
+<p> categoria: {{$art->nempresa}} </p>
 <button>Agregar</button>
 </section>
 </div>
