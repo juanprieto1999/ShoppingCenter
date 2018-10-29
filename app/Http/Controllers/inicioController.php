@@ -17,9 +17,9 @@ class inicioController extends Controller
   }
   public function listatiendas(){
 
-	$lista=DB::table('empresa')->where('Estado','=','1')->get();
+	$lista=DB::table('empresa')->where('Estado','=','1')->get(); //Consulta rapida con condicion
 
-	return view('Inicio/lista',["lista"=>$lista]);
+	return view('Inicio/lista',["lista"=>$lista]); //Enviar a la vista y 1 parametros
 }
 
 

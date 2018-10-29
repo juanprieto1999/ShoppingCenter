@@ -45,6 +45,7 @@ class RegisterController extends Controller
 
     public function showRegistrationForm($tipo)
     {
+        // condicion que permite validar cual rol sera loguedo
         if($tipo=='user'){
             return view('auth.register');
         }elseif($tipo=='store'){

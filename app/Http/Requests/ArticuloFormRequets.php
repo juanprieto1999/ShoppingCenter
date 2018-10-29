@@ -23,6 +23,7 @@ class ArticuloFormRequets extends FormRequest
      */
     public function rules()
     {
+      //Reglas para validar datos a guardar
         return [
           'idCategoria'=>'required',
            'Codigo'=>'required|max:20',
