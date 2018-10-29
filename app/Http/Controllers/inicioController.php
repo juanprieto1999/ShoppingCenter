@@ -17,7 +17,7 @@ class inicioController extends Controller
   }
   public function listatiendas(){
 
-	$lista=DB::table('empresa')->get();
+	$lista=DB::table('empresa')->where('Estado','=','1')->get();
 
 	return view('Inicio/lista',["lista"=>$lista]);
 }

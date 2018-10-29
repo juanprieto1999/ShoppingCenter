@@ -13,15 +13,17 @@ use DB;
 class articulocontroller extends Controller
 {
     public function index(Request $request){
+    $query=trim($request->get('searchText'));
     $idempresa=auth()->user()->idempresa;  
 	$articulos=DB::table('articulo as a')
     ->join('categoria as c','a.idCategoria','=','c.idCategoria')
     ->select('a.idArticulo','a.Nombre','a.Codigo','a.Stock','a.Descripcion','c.Nombre as categoria','a.Imagen','a.Estado','a.Valor','a.idEmpresa')
+    ->where('a.Nombre','LIKE','%'.$query.'%')->orwhere('a.Codigo','LIKE','%'.$query.'%')
     ->where('idempresa','=',$idempresa)->get();
 
 
 	//$articulos= Articulo::all();
-	return view('DashStore/Articulo/index',["articulos"=>$articulos]);
+	return view('DashStore/Articulo/index',["articulos"=>$articulos,"searchText"=>$query]);
 
 }
 public function create()

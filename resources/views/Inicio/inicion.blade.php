@@ -196,7 +196,7 @@ var listProduct = function()
   <a class="carousel-control-next" href="#demo" data-slide="next">
     <span class="carousel-control-next-icon"></span>
   </a>
-   @include('Inicio.storeslist')
+   @include('Inicio.modalist')
 </div> 
     </body>
 </html>

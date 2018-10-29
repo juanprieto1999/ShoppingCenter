@@ -3,7 +3,7 @@
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
 		<h3>Listado De Articulos<a href="{{action('articulocontroller@create')}}"><button class="btn btn-succes">Nuevo</button></a></h3>
-	
+	@include('DashStore/Articulo/search')
 	</div>
 </div>
 

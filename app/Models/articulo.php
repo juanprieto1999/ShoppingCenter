@@ -22,6 +22,16 @@ class articulo extends Model
 'Valor'
 
 ];
+// QUERY SCOPE, EXTENDEMOS LA CAPACIDAD DE ELOQUENT, FORMA DE HACER CONSULTAS
+
+public function scopeNombre($query,$nombre)
+{
+	if($nombre)
+		return $query->where('Nombre','LIKE',"%$nombre%");
+}
+
+
+
 //Se usa esta funcion para relacionar articulo con empresa, con el fin de obtener los datos de empresa.
 public function empresa()
 	{
