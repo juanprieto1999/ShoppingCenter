@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
+
     {{--
 {{Form::open(['route' => 'busqueda', 'method' => 'GET', 'class' => 'form-inline pull-right']) }}
 <div class="form-group">
@@ -33,7 +28,28 @@
                 </table>
                 
 </div>
-
+@foreach ($empresa as $empre)
+<div class="btienda">
+<img src="{{ asset('Imagenes/Empresa/'.$empre->Nombre.'/'.$empre->Imagen)}}" >
+<div id="nombretienda">{{$empre ->Nombre}}</div>
+</div>
+@endforeach
 --}}
-</body>
-</html>
+
+
+@foreach ($articulos as $art)
+<div class="item">
+<a>
+<img src="{{asset('Imagenes/Empresa/'.$art->idEmpresa.'/'.$art->Imagen)}}"   >
+</a>
+<section>
+<h3>{{$art->Nombre}}</h3>
+<p> valor : $ {{$art->Valor}} </p>
+<p> empresa: {{$art->idEmpresa}} </p>
+<p> categoria: {{$art->categoria}} </p>
+<button>Agregar</button>
+</section>
+</div>
+@endforeach
+
+

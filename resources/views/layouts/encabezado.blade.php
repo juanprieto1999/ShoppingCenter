@@ -37,6 +37,20 @@
 
     </div>
 
+    {!! Form::open(array('url'=>'/serch','method'=>'GET','autocomplete'=>'off','role'=>'search')) !!}
+<div class="form-group">
+  <div class="input-group">
+    <input type="text"  class="form-control" name="searchText" placeholder="Buscar.."> 
+    <span class="input-group-btn">
+      <button type="submit" class="btn btn-primary">Buscar</button>
+    </span>
+  </div>
+</div>
+
+
+
+{!! Form::close() !!}
+
 <ul class="navbar-nav flex-row w-100 justify-content-end">
   @guest
     <li class="nav-item px-2">

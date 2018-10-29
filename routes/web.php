@@ -20,7 +20,7 @@ Auth::routes();
 Route::get('/registro/{tipo}','Auth\RegisterController@showRegistrationForm');
 Route::get('store/{id}','storeController@index')->where(['id' => '[\d]+']);
 Route::get('/liststores', 'inicioController@listatiendas');
-Route::get('/serch', 'searchController@index')->name('busqueda');
+Route::resource('/serch', 'searchController');
 
 
 
