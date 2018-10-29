@@ -1,5 +1,6 @@
 .imagenperfil img {
 padding:  2%;
+border-radius:50%; 
 }
 .namestore p {
 color: white;

@@ -30,6 +30,7 @@
           <span class="logo-mini"><b>S</b>C</span>
           <!-- logo for regular state and mobile devices -->
           <span class="logo-lg"><b>Shopping Center</b></span>
+</button>
         </a>
 
         <!-- Header Navbar: style can be found in header.less -->

@@ -13,7 +13,7 @@
      padding-top: 5%;
     }
   </style>
-  <body>
+  <body >
 
 
 
@@ -98,8 +98,8 @@ function medidas(id){
 </ul>
       </nav>
 </header>
-
 @yield('content')
+
     
 
 
