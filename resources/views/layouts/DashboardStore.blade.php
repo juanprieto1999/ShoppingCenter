@@ -42,7 +42,7 @@
           <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
                <li id="irtienda">
-              <a href="{{ url('store/2')}}">
+              <a href="{{ url('store/'.Auth::user()->idempresa)}}">
                 <span>Ir a la tienda</span>
       </a>
       
@@ -83,7 +83,7 @@
             	<img class="img-responsive img-rounded" src="{{ asset('Imagenes/bebida1.jpg') }} "></img>
             </li>
             <li class="namestore">
-            	<p class="text-center "> Tienda</p>
+            	<p class="text-center ">{{Auth::user()->email}}</p>
             </li>
 
 
