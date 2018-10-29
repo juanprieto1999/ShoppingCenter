@@ -18,15 +18,15 @@ Route::get('/', function () {
 
 Auth::routes();
 Route::get('/registro/{tipo}','Auth\RegisterController@showRegistrationForm');
-Route::get('store/{id}','storeController@index')->where(['id' => '[\d]+']);
-Route::get('/liststores', 'inicioController@listatiendas');
-Route::resource('/serch', 'searchController');
+Route::get('store/{id}','storeController@index')->where(['id' => '[\d]+']); //Ruta para una tienda, validando que sea un id.
+Route::get('/liststores', 'inicioController@listatiendas'); //Ruta para listar las tiendas en el modal.
+Route::resource('/serch', 'searchController'); //Ruta para la busqueda inteligente en toda la tienda.
 
 
 
 
 Route::middleware('tienda')->group(function(){
-Route::get('/dash', 'DashBoardStoreController@index');
+Route::get('/dash', 'DashBoardStoreController@index');  
 Route::resource('dash/articulos', 'articulocontroller');
 
 

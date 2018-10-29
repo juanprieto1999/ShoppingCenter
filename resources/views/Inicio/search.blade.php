@@ -1,4 +1,5 @@
-
+@extends('layouts.encabezado')
+@section('content')
     {{--
 {{Form::open(['route' => 'busqueda', 'method' => 'GET', 'class' => 'form-inline pull-right']) }}
 <div class="form-group">
@@ -52,5 +53,4 @@
 </section>
 </div>
 @endforeach
-
-
+@endsection
