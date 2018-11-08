@@ -29,28 +29,32 @@
 					<td>{{$art->categoria}}</td>
 					<td>{{$art->Descripcion}}</td>
 					<td>{{$art->Stock}}</td>
-					<td>
+					<td>{{$art->Valor}}</td>
 						{{--<img src="{{asset('imagenes/articulos/'.$art->Imagen)}}" alt="{{$art->Nombre}}" height="100px" width="100px" class="img-thumbnail">--}}
-						{{ $art->Valor }}
-
-					</td>
 					<td>@if($art->Estado ==1)
-						{{ 'Activo' }}
+						{{ 'Actvo' }}
 						@else
 						{{ 'Desactivado' }}
 						@endif
 					</td>
-
 				 	<td>
 						 <a href="{{URL::action('articulocontroller@edit',$art->idArticulo)}}"><button class="btn btn-info">Editar</button></a> 
-						<a href="" data-target="#modal-delete-{{$art->idArticulo}}" data-toggle="modal"><button class="btn btn-secondary">Cambiar Estado</button></a> 						
+						<a href="" data-toggle="modal" data-target="#modal-delete-{{$art->idArticulo}}" ><button class="btn btn-danger">Eliminar
+							
+						</button></a>
+							
 					</td>
+
 				</tr>
-				@include('DashStore.Articulo.modal')
+				@include('DashStore.Articulo.modal')										
 				@endforeach
-				
-			</table>
+			
+
+
+			</table>	
 		</div>
-	</div>
+
+		</div>
+
 	</div>
 @endsection

@@ -19,9 +19,9 @@ class articulocontroller extends Controller
 	$articulos=DB::table('articulo as a') 
     ->join('categoria as c','a.idCategoria','=','c.idCategoria') //Relacionar 2 tablas
     ->select('a.idArticulo','a.Nombre','a.Codigo','a.Stock','a.Descripcion','c.Nombre as categoria','a.Imagen','a.Estado','a.Valor','a.idEmpresa')
-    ->where('a.Nombre','LIKE','%'.$query.'%')->orwhere('a.Codigo','LIKE','%'.$query.'%')
-    ->where('idempresa','=',$idempresa)->get(); //Igualar que la empresa consultada es igual a la empresa logueada
-
+    ->where('a.idEmpresa','=',$idempresa)
+    ->where('a.Nombre','LIKE','%'.$query.'%')
+    ->where('a.Codigo','LIKE','%'.$query.'%')->get(); 
 	return view('DashStore/Articulo/index',["articulos"=>$articulos,"searchText"=>$query]);
 
 }
@@ -102,6 +102,5 @@ return Redirect::to('dash/articulos');
     $articulo->update(); //Actualizamos el articulo en la BD.
 
     return Redirect::to('dash/articulos'); //Redirijir  a la vista 
-
-       }
+    }
 }

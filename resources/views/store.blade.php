@@ -57,7 +57,7 @@ section{
 <body>
 @foreach ($empresa as $empre)
 <div class="imagentienda">
-<img src="{{ asset('Imagenes/Empresa/'.$empre->Nombre.'/'.$empre->Imagen)}}" >
+<img src="{{ asset('Imagenes/Empresa/'.$empre->Nombre.'/'.$empre->Imagen)}}">
 <div id="nombretienda">{{$empre ->Nombre}}</div>
 </div>
 @endforeach

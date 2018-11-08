@@ -19,11 +19,68 @@
         <link type="text/css" rel="stylesheet" href="{{ asset('css/style.css') }} "/>
 
 </head>
+<style >
+.products-tabs{
+width: 100%;
+height: 100px;
+
+}
+</style>
+
+<div class="section">
+<div class="container">
+  <div class="row" >
+                    <div class="col-md-12">
+                            <div class="products-tabs">
+                                <!-- tab -->
+                                <div id="tab2" class="tab-pane fade in active">
+                                    <div class="products-slick" data-nav="#slick-nav-2">
+                                    @foreach ($articulos as $art)
+                                    @if($condicion != $art->idEmpresa)                           
+                                        <!-- product -->
+                                        <div class="product">
+                                            {{-- <div class="product-img">
+                                                <img src="{{ asset('Imagenes/Empresa/'.$art->nempresa.'/'.$art->iempresa) }}" alt="" img>                                                                      
+                                            </div>--}}
+                                            <div class="product-body">
+                                                <h3 class="product-name"><a href="{{url('store/'.$art->idEmpresa)}}">{{$art->nempresa}}</a></h3>
+                                                   <p class="product-category"></p>                                            
+                                                <div class="product-rating">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </div>
+                                        
+                                            </div>
+                                        </div>
+                                        <!-- /product -->
+                                        @php
+                                            $condicion=$art->idEmpresa
+                                        @endphp
+@endif
+
+                                     @endforeach 
+
+
+                                     
+                                    </div>
+                                    <div id="slick-nav-2" class="products-slick-nav"></div>
+                                </div>
+                                <!-- /tab -->
+                            </div>
+                            </div>
+                </div>
+            </div>
+        </div>
 
         <!-- SECTION -->
         <div class="section">
-            <!-- container -->
+                  <!-- container -->
             <div class="container">
+     
+      
                 <!-- row -->
                 <div class="row">
                     <!-- ASIDE -->

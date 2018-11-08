@@ -1,4 +1,4 @@
-<div class="modal fade moda-slide-in-right" aria-hidden="true" role="dialog" tabindex="-1" id="modal-delete-{{$art->idArticulo}}">
+ <div class="modal fade moda-slide-in-right" aria-hidden="true" role="dialog" tabindex="-1" id="modal-delete-{{$art->idArticulo}}">
 	{{Form::Open(array('action'=>array('articulocontroller@destroy',$art->idArticulo),'method'=>'delete'))}}
 	<div class="modal-dialog">
 		<div class="modal-content">
@@ -21,3 +21,4 @@
 	</div>
 {{Form::Close()}}
 </div>
+

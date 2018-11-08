@@ -20,16 +20,15 @@ class searchController extends Controller
    		return view('Inicio/search',compact('articulos'));*/
 
    	$query=trim($request->get('searchText'));  //Trim , traemos los datos del request.
-
+$condicion="";
 		$articulos=DB::table('articulo as a')
     	->join('categoria as c','a.idCategoria','=','c.idCategoria') //Relacionar 2 tablas.
     	->join('empresa as emp','a.idEmpresa','=','emp.idEmpresa')
     	->select('a.idArticulo','a.Nombre','a.Codigo','a.Stock','a.Descripcion','c.Nombre as categoria','emp.Nombre as nempresa','a.Imagen','a.Estado','a.Valor','a.idEmpresa')
     ->where('a.Nombre','LIKE','%'.$query.'%')->orwhere('c.Nombre','LIKE','%'.$query.'%')->orwhere('emp.Nombre','LIKE','%'.$query.'%')->get(); //Busqueda inteligente, tiene como funcion buscar datos relacionados con la BD y los datos solicitados
 
-
 	//$articulos= Articulo::all();
-	return view('Inicio/search',["articulos"=>$articulos,"searchText"=>$query]); //Enviar a la vista y 3 parametros.
+	return view('Inicio/search',["articulos"=>$articulos,"searchText"=>$query])->with('condicion',$condicion); //Enviar a la vista y 3 parametros.
 
 
     }
