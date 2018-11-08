@@ -73,6 +73,7 @@ section{
 <h3>{{$art->Nombre}}</h3>
 <p> valor : $ {{$art->Valor}} </p>
 <button>Agregar</button>
+<button>Detalles</button>
 </section>
 </div>
 @endforeach
