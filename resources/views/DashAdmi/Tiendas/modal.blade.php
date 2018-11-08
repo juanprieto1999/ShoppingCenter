@@ -3,10 +3,11 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
+				<h4 class="modal-title">Cambiar Estado</h4>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">x</span>
 				</button>
-				<h4 class="modal-title">Cambiar Estado</h4>
+				
 			</div>
 			<div class="modal-body">
 				<p>Confirme si desea Cambiar el estado de la tienda.</p>
