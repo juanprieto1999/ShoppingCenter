@@ -25,6 +25,20 @@ class articulocontroller extends Controller
 	return view('DashStore/Articulo/index',["articulos"=>$articulos,"searchText"=>$query]);
 
 }
+     public function status($id)
+   {
+    $articulo=articulo::findOrFail($id);
+    if($articulo->Estado==1){
+        $articulo->Estado='0'; // envia 0
+    }else{
+        $articulo->Estado='1'; // envia 1
+    }
+    $articulo->update(); //Actualizamos el articulo en la BD.
+
+    return Redirect::to('dash/articulos'); //Redirijir  a la vista 
+    }
+
+
 public function create()
     {
         //Metodo para crear
@@ -94,13 +108,9 @@ return Redirect::to('dash/articulos');
     public function destroy($id)
    {
     $articulo=articulo::findOrFail($id);
-    if($articulo->Estado==1){
-        $articulo->Estado='0'; // envia 0
-    }else{
-        $articulo->Estado='1'; // envia 1
-    }
-    $articulo->update(); //Actualizamos el articulo en la BD.
+    $articulo->delete(); //Actualizamos el articulo en la BD.
 
     return Redirect::to('dash/articulos'); //Redirijir  a la vista 
     }
+
 }

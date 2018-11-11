@@ -32,14 +32,18 @@
 					<td>{{$art->Valor}}</td>
 						{{--<img src="{{asset('imagenes/articulos/'.$art->Imagen)}}" alt="{{$art->Nombre}}" height="100px" width="100px" class="img-thumbnail">--}}
 					<td>@if($art->Estado ==1)
-						{{ 'Actvo' }}
+						{{ 'Activo' }}
 						@else
 						{{ 'Desactivado' }}
 						@endif
 					</td>
 				 	<td>
 						 <a href="{{URL::action('articulocontroller@edit',$art->idArticulo)}}"><button class="btn btn-info">Editar</button></a> 
-						<a href="" data-toggle="modal" data-target="#modal-delete-{{$art->idArticulo}}" ><button class="btn btn-danger">Eliminar
+						<a href="" data-toggle="modal" data-target="#modal-status-{{$art->idArticulo}}" ><button class="btn btn-warning">Cambiar Estado
+							
+						</button></a>
+						<a href="" data-toggle="modal" data-target="#modal-delete-{{$art->idArticulo}}" ><button class="btn btn-danger">
+							Eliminar
 							
 						</button></a>
 							

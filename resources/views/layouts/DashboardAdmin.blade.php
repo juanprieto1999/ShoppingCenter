@@ -68,7 +68,7 @@
             <li class="header"></li>
             
             <li class="imagenperfil">
-            	<img class="img-responsive img-rounded" width="40px" height="40px" src="{{ asset('Imagenes/bebida1.jpg') }} "></img>
+            	<img class="img-responsive img-rounded"  src="{{ asset('Imagenes/bebida1.jpg') }} "></img>
             </li>
             <li class="namestore">
             	<p class="text-center "> Admin</p>

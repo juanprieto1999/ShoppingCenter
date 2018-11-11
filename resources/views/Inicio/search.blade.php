@@ -2,29 +2,23 @@
 @section('content') 
 
 <head>
-    
         <!-- Google font -->
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
         <!-- Slick -->
         <link type="text/css" rel="stylesheet" href="{{  asset('css/slick.css')  }}"/>
-        <link type="text/css" rel="stylesheet" href="{{ asset('css/slick-theme.css') }} "/>
-
-  
+        <link type="text/css" rel="stylesheet" href="{{ asset('css/slick-theme.css') }} "/>  
         <link type="text/css" rel="stylesheet" href="{{ asset('css/nouislider.min.css') }} "/>
-
         <!-- Font Awesome Icon -->
         <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }} ">
-
         <!-- Custom stlylesheet -->
         <link type="text/css" rel="stylesheet" href="{{ asset('css/style.css') }} "/>
-
 </head>
 <style >
 .products-tabs{
 width: 100%;
 height: 100px;
 
-}
+
 </style>
 
 <div class="section">
@@ -59,12 +53,9 @@ height: 100px;
                                         @php
                                             $condicion=$art->idEmpresa
                                         @endphp
-@endif
+                                    @endif
 
-                                     @endforeach 
-
-
-                                     
+                                     @endforeach                                      
                                     </div>
                                     <div id="slick-nav-2" class="products-slick-nav"></div>
                                 </div>
@@ -74,13 +65,10 @@ height: 100px;
                 </div>
             </div>
         </div>
-
         <!-- SECTION -->
         <div class="section">
                   <!-- container -->
-            <div class="container">
-     
-      
+            <div class="container">      
                 <!-- row -->
                 <div class="row">
                     <!-- ASIDE -->
@@ -146,7 +134,6 @@ height: 100px;
                             </div>
                         </div>
                         <!-- /aside Widget -->
-
                         <!-- aside Widget -->
                         <div class="aside">
                             <h3 class="aside-title">Price</h3>
@@ -166,7 +153,6 @@ height: 100px;
                             </div>
                         </div>
                         <!-- /aside Widget -->
-
                         <!-- aside Widget -->
                         <div class="aside">
                             <h3 class="aside-title">Brand</h3>
@@ -294,8 +280,7 @@ height: 100px;
                         <!-- store products -->
                         <div class="row">
                             <!-- product -->
-
-@foreach ($articulos as $art)
+                        @foreach ($articulos as $art)
 
                             <div class="col-md-4 col-xs-6">
                                 <div class="product">
@@ -342,11 +327,8 @@ height: 100px;
                         <div class="store-filter clearfix">
                             <span class="store-qty">Showing 20-100 products</span>
                             <ul class="store-pagination">
-                                <li class="active">1</li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                                {{$articulos->render()}}
+                                
                             </ul>
                         </div>
                         <!-- /store bottom filter -->
