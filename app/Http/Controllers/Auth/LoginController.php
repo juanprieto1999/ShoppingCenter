@@ -35,6 +35,7 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+        
     }
     //Funcion que permite al usuario enrolarse
      public function redirectPath()
@@ -46,5 +47,9 @@ class LoginController extends Controller
         }
 
         return '/dashadmin';
+    
+
+
+
     }
 }

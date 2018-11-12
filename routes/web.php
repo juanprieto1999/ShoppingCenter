@@ -14,9 +14,13 @@
 Route::get('/', function () {
     return view('Inicio/inicion');
 });
-
+Route::get('/ban', function () {
+    return view('ban');
+});
 
 Auth::routes();
+
+
 Route::get('/registro/{tipo}','Auth\RegisterController@showRegistrationForm');
 Route::get('store/{id}','storeController@index')->where(['id' => '[\d]+']); //Ruta para una tienda, validando que sea un id.
 Route::get('/liststores', 'inicioController@listatiendas'); //Ruta para listar las tiendas en el modal.
@@ -29,12 +33,12 @@ Route::middleware('tienda')->group(function(){
 Route::get('/dash', 'DashBoardStoreController@index');  
 Route::resource('dash/articulos', 'articulocontroller');
 Route::get('dash/articulos/{id}/status', 'articulocontroller@status')->name('articulocontroler.status');
-}) ;
+});
 
 
 Route::middleware('admin')->group(function(){
-
 Route::get('/dashadmin', 'DashBoardAdminController@index');
 Route::get('/dashadmin/stores', 'DashBoardAdminController@tindex');
+Route::resource('/dashadmin/users', 'userController');
 Route::resource('store', 'storeController');
 });
