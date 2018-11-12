@@ -202,7 +202,7 @@ section{
                            @endforeach
 
                             <!-- /product -->
-                      }
+                      
                    </div>
                      <!-- store bottom filter -->
                         <div class="store-filter clearfix">

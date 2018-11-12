@@ -10,6 +10,7 @@ class inicioController extends Controller
 {
   public function __construct()
   {
+    $this->middleware('status')->except('logout');
   }
   public function index()
   {

@@ -45,7 +45,7 @@ class RegisterController extends Controller
 
     public function showRegistrationForm($tipo)
     {
-        // condicion que permite validar cual rol sera loguedo
+        // condicion que permite mostrar el formulario de cliente o empresa.
         if($tipo=='user'){
             return view('auth.register');
         }elseif($tipo=='store'){
@@ -115,6 +115,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'idpersona' => $usuario->idpersona,
+            'estado' => '1',
         ]);
     }else{
       $tienda =empresa::create([
@@ -130,6 +131,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'idempresa' => $tienda->idEmpresa,
+            'estado' =>'1',
         ]);  
        
     }
