@@ -24,7 +24,6 @@ Route::resource('/serch', 'searchController'); //Ruta para la busqueda inteligen
 
 
 
-
 Route::middleware('tienda')->group(function(){
 Route::get('/dash', 'DashBoardStoreController@index');  
 Route::resource('dash/articulos', 'articulocontroller');

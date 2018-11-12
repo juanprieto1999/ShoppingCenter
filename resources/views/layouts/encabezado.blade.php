@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="{{ asset('css/encabezado.css') }}">
   {{-- <  <link rel="stylesheet" href="{{ asset('css/iniciog.css') }}"> --}}
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js" type="text/javascript"></script>
+   
+   
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   </head>
   <style>
@@ -67,7 +69,10 @@ function medidas(id){
 {!! Form::close() !!}
 
 <ul class="navbar-nav flex-row w-100 justify-content-end">
-  @guest
+  @guest 
+  <a href="store.cart"><i href=""# class="fa fa-shopping-cart" style="margin-top: 10px; font-size: 20px;"></i>
+
+  </a>
     <li class="nav-item px-2">
       <a class="nav-link" href="{{ route('login') }}">Iniciar Sesion</a>
     </li>
@@ -76,6 +81,7 @@ function medidas(id){
     </li>
   @else
 
+<a href="store.cart"><i href=""# class="fa fa-shopping-cart" style="margin-top: 10px; font-size: 20px;"></i></a>
     <li class="nav-item px-2">
       <label class="nav-label"> Bienvenido {{ Auth::user()->name }}</label>
     </li>
