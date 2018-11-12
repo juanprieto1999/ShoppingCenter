@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }} ">
         <!-- Custom stlylesheet -->
         <link type="text/css" rel="stylesheet" href="{{ asset('css/style.css') }} "/>
+        
 </head>
 <style type="text/css">
 .imagentienda{
@@ -68,6 +69,7 @@ section{
 </style>
 
 <body>
+
 
 	<!--SECTION-->
 	
