@@ -14,6 +14,7 @@
 Route::get('/', function () {
     return view('Inicio/inicion');
 });
+//ruta del ban
 Route::get('/ban', function () {
     return view('ban');
 });
@@ -25,7 +26,7 @@ Route::get('/registro/{tipo}','Auth\RegisterController@showRegistrationForm');
 Route::get('store/{id}','storeController@index')->where(['id' => '[\d]+']); //Ruta para una tienda, validando que sea un id.
 Route::get('/liststores', 'inicioController@listatiendas'); //Ruta para listar las tiendas en el modal.
 Route::resource('/serch', 'searchController'); //Ruta para la busqueda inteligente en toda la tienda.
-
+Route::resource('/store', 'searchController');
 
 
 Route::middleware('tienda')->group(function(){
@@ -34,10 +35,29 @@ Route::resource('dash/articulos', 'articulocontroller');
 Route::get('dash/articulos/{id}/status', 'articulocontroller@status')->name('articulocontroler.status');
 });
 
-
 Route::middleware('admin')->group(function(){
 Route::get('/dashadmin', 'DashBoardAdminController@index');
 Route::get('/dashadmin/stores', 'DashBoardAdminController@tindex');
 Route::resource('/dashadmin/users', 'userController');
 Route::resource('store', 'storeController');
 });
+
+//carrito
+Route::get('cart/show',[
+'as' => 'cart-show',
+'uses'=> 'CartController@show'
+]); //mostrar el producto dentro del carrito
+
+
+//agregar al carrito
+Route::get('cart/add/{product}',[
+'as' => 'cart-add',
+'uses'=> 'CartController@add'
+]);
+
+
+
+
+
+
+

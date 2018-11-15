@@ -44,13 +44,14 @@ function medidas(id){
 
 
 
+
 </script>
 <header>
 <nav class="navbar fixed-top navbar-expand-lg navbar-light " id="navid" name="navid">
 
      <div id="titulo"  >
      <!-- <h1>ShoppingCenter</h1>-->
-<a href="/"><img src="{{  asset('Imagenes/Logo.png')  }}" width="45%" align="left"></a>
+<a href="/"><img src="{{asset('Imagenes/Logo.png')}}" width="45%" align="left"></a>
 
     </div>
 
@@ -70,7 +71,7 @@ function medidas(id){
 
 <ul class="navbar-nav flex-row w-100 justify-content-end">
   @guest 
-  <a href="store.cart"><i href=""# class="fa fa-shopping-cart" style="margin-top: 10px; font-size: 20px;"></i>
+  <a href=""><i href="" class="fa fa-shopping-cart" style="margin-top: 10px; font-size: 20px;"></i>
 
   </a>
     <li class="nav-item px-2">
@@ -81,7 +82,7 @@ function medidas(id){
     </li>
   @else
 
-<a href="store.cart"><i href=""# class="fa fa-shopping-cart" style="margin-top: 10px; font-size: 20px;"></i></a>
+<a href="store.cart"><i href="" class="fa fa-shopping-cart" style="margin-top: 10px; font-size: 20px;"></i></a>
     <li class="nav-item px-2">
       <label class="nav-label"> Bienvenido {{ Auth::user()->name }}</label>
     </li>
