@@ -42,18 +42,19 @@
           <!-- Navbar Right Menu -->
           <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
-              <li class="user user-menu">
-                
-                   <a href="{{ route('logout') }}"
-         onclick="event.preventDefault();
-                       document.getElementById('logout-form').submit();">
-         <span class="glyphicon glyphicon-off"></span>
-      </a>
-      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-          @csrf
-      </form>
+            <li class="user user-menu">
+                  <a href="{{ route('logout') }}"
+                     onclick="event.preventDefault();
+                                   document.getElementById('logout-form').submit();">
+                  <span >Cerrar Sesion</span>
+                  <i class="fa fa-sign-out"></i> 
+                     
+                  </a>
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                      @csrf
+                  </form>
                
-</li>
+            </li>
 </ul></div></nav>
 
       </header>

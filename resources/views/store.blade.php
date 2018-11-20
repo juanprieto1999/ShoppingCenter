@@ -194,7 +194,7 @@ section{
                                         </div>
                                     </div>
                                     <div class="add-to-cart">
-                                        <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>AÑADIR +</button>
+                                        <a href="{{ route('cart-add',$art->idArticulo) }}"><button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>AÑADIR +</button></a>
                                     </div>
                                 </div>
                             </div>

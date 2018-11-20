@@ -42,7 +42,12 @@ Route::resource('/dashadmin/users', 'userController');
 Route::resource('store', 'storeController');
 });
 
-//carrito
+
+Route::bind('product',function($id){
+	return App\Models\articulo::where('idArticulo',$articulo)->first();
+});
+
+//Carrito
 Route::get('cart/show',[
 'as' => 'cart-show',
 'uses'=> 'CartController@show'
@@ -50,11 +55,28 @@ Route::get('cart/show',[
 
 
 //agregar al carrito
-Route::get('cart/add/{product}',[
+Route::get('cart/add/{articulo}',[
 'as' => 'cart-add',
 'uses'=> 'CartController@add'
 ]);
 
+//eliminar del carrito
+Route::get('cart/delete/{articulo}',[
+'as' => 'cart-delete',
+'uses'=> 'CartController@delete'
+]);
+
+//vaciar  carrito
+Route::get('cart/trash',[
+'as' => 'cart-trash',
+'uses'=> 'CartController@trash'
+]);
+
+//eliminar del carrito
+Route::get('cart/update/{articulo}/{cantidad?}',[
+'as' => 'cart-update',
+'uses'=> 'CartController@update'
+]);
 
 
 

@@ -71,7 +71,7 @@ function medidas(id){
 
 <ul class="navbar-nav flex-row w-100 justify-content-end">
   @guest 
-  <a href=""><i href="" class="fa fa-shopping-cart" style="margin-top: 10px; font-size: 20px;"></i>
+  <a href="{{ route('cart-show') }}"><i href="" class="fa fa-shopping-cart" style="margin-top: 10px; font-size: 20px;"></i>
 
   </a>
     <li class="nav-item px-2">
@@ -82,7 +82,7 @@ function medidas(id){
     </li>
   @else
 
-<a href="store.cart"><i href="" class="fa fa-shopping-cart" style="margin-top: 10px; font-size: 20px;"></i></a>
+<a href="{{ route('cart-show') }}"><i href="" class="fa fa-shopping-cart" style="margin-top: 10px; font-size: 20px;"></i></a>
     <li class="nav-item px-2">
       <label class="nav-label"> Bienvenido {{ Auth::user()->name }}</label>
     </li>
