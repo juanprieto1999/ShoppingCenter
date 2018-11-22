@@ -43,6 +43,7 @@ Route::resource('store', 'storeController');
 });
 
 
+
 Route::bind('product',function($id){
 	return App\Models\articulo::where('idArticulo',$articulo)->first();
 });
@@ -72,12 +73,30 @@ Route::get('cart/trash',[
 'uses'=> 'CartController@trash'
 ]);
 
-//eliminar del carrito
+//Actualizar el carrito
 Route::get('cart/update/{articulo}/{cantidad?}',[
 'as' => 'cart-update',
 'uses'=> 'CartController@update'
 ]);
 
+//Detalles del carrito
+Route::get('order-detail',[
+'middleware' => 'auth',
+'as' => 'order-detail',
+'uses'=> 'CartController@orderdetail'
+]);
+
+//Paypal
+//Enviamps nuestro pedido a paypal
+Route::get('payment',array(
+'as' => 'payment',
+'uses'=> 'PaypalController@postPayment'
+));
+//Paypal redirecciona a esta rutaz
+Route::get('payment/status',array(
+'as' => 'payment.status',
+'uses'=> 'PaypalController@getPaymentStatus'
+));
 
 
 

@@ -42,5 +42,9 @@ public function categoria()
 	{
 		return $this->belongsTo(categoria::class);
 	}
+public function order_item()
+    {
+        return $this->hasOne('App\OrderItem');
+    }
 
 }

@@ -1,7 +1,9 @@
 @extends('layouts.encabezado')
 @section('content')
-<script src="{{ asset('js/cart.js') }}">
-	
+<head>
+	 <link rel="stylesheet" href="{{asset('css/font-awesome.css')}}">
+</head>
+<script src="{{asset('js/cart.js')}}">
 </script> 
 @if(count($cart))
 <p>
@@ -28,11 +30,10 @@
 				<td>
 					<input type="number" min="1" value="{{ $item->cantidad}}" 
 					id="product_{{$item->idArticulo}}">
-
-						<a href="#" class="btn btn-warning btn-update-item"
+						<a class="btn btn-warning" href='javascript:;' onclick="actualizar(this);"
 						data-href="{{route('cart-update',$item->idArticulo)}}" 
 						data-id="{{$item->idArticulo}}">
-								<i class="fa fa-refresh"></i>
+							<i class="fa fa-refresh"></i>
 						</a>
 				</td>
 				<td>${{number_format($item->Valor * $item->cantidad,2) }}
@@ -54,7 +55,7 @@
 	<a href="{{ url('/') }}" class="btn btn-primary">
 		<i class="fa fa-chevron-circle-left">Seguir Comprando</i>
 	</a>
-	<a href="#" class="btn btn-primary">
+	<a href="{{ route('order-detail') }}" class="btn btn-primary">
 		<i class="fa fa-chevron-circle-right">Continuar</i>
 	</a>
 

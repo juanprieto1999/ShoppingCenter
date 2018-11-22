@@ -1,7 +1,7 @@
-$(".btn-update-item").on('click',function(e) {
-e.preventDefault();
-var id=$(this).data['id'];
-var href=$(this).data['href'];
-var cantidad=$("#product_"+ id).val();
-window.location.href = href +"/"+ cantidad;
-});
+var actualizar = function(dato)
+  {  
+	var id=dato.getAttribute("data-id");
+	var href=dato.getAttribute("data-href");
+	var cantidad=$("#product_"+ id).val();
+	window.location.href = href +"/"+ cantidad;
+  }

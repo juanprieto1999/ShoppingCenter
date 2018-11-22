@@ -311,7 +311,7 @@ height: 100px;
                                         </div>
                                     </div>
                                     <div class="add-to-cart">
-                                        <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+                                        <a href="{{ route('cart-add',$art->idArticulo) }}"><button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button></a>
                                     </div>
                                 </div>
                             </div>

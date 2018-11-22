@@ -36,6 +36,10 @@ class CartController extends Controller
 	\Session::put('cart',$cart);
 	return redirect()->route('cart-show');
 	}
+
+
+
+	
 public function trash(){
 	\Session::forget('cart'); //Vacia el carrito
 	return redirect()->route('cart-show');
@@ -47,6 +51,25 @@ $cart=\Session::Get('cart');//Recibe la variable y la guarda en cart
 $cart[$articulo->idArticulo]->cantidad = $cantidad;
 \Session::put('cart',$cart); //Actualizar variable sesion
 return redirect()->route('cart-show');//finalmente redirijira a show
+}
+
+private function total()
+{
+	$cart =\Session::get('cart');
+	$total = 0;
+	foreach ($cart as $item) {
+		$total += $item->Valor * $item->cantidad;
+	}
+return $total;
+
+}
+
+
+public function orderdetail(){
+	if(count(\Session::get('cart'))<=0) return redirect()->route('/');
+	$cart = \Session::get('cart');
+	$total = $this->total();
+	return view('store.order-detail',compact('cart','total'));
 }
 
 }

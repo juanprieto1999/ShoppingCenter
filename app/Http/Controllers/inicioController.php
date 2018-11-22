@@ -14,7 +14,7 @@ class inicioController extends Controller
   }
   public function index()
   {
-      return view('Inicio/inicio');
+      return view('Inicio/inicion');
   }
   public function listatiendas(){
 
