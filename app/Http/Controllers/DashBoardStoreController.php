@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Articulo;
 use App\Models\empresa;
+use App\Model\detalleventa;
 use App\Models\User;
 use DB;
 
@@ -21,7 +22,12 @@ public function index(Request $request){
 	
 	return view('DashStore/index');
 }
+public function listapedidos(){
 
+
+
+
+} 
 
 
 

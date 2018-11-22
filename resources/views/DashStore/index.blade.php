@@ -91,7 +91,7 @@
                     <div class="row">
                       <div class="col-md-12">
                               <!--Contenido-->
-                              @yield('pedidos')
+                              @include('DashStore/sale')
                               <!--Fin Contenido-->
                            </div>
                         </div>
