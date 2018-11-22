@@ -6,26 +6,19 @@
       <th scope="col">Producto</th>
       <th scope="col">Usuario</th>
       <th scope="col">Estado</th>
+
     </tr>
   </thead>
   <tbody>
+  	@foreach($lista as $list)
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <th scope="row">{{$list->idDetalleVenta}}</th>
+      <td></td>
+      <td>{{ $list->idArticulo }}</td>
+      <td></td>
+      <td> {{ $list->Estado }}</td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
+    @endforeach
+  
   </tbody>
 </table>

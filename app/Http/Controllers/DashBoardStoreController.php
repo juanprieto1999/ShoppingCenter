@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Articulo;
 use App\Models\empresa;
-use App\Model\detalleventa;
 use App\Models\User;
 use DB;
 
@@ -17,17 +16,12 @@ class DashBoardStoreController extends Controller
        $this->middleware('status')->except('logout'); ////middleware que permite bloquear el acceso al usuario desactivado
    }
 public function index(Request $request){
-    
-     //dd($ntiendas);
 	
-	return view('DashStore/index');
+	$lista=DB::table('detalleventa')->select()->where('idEmpresa','=', auth()->user()->idempresa)->get();
+
+	return view('DashStore/index',compact('lista'));
 }
-public function listapedidos(){
 
-
-
-
-} 
 
 
 

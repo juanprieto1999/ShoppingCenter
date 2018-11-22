@@ -154,9 +154,9 @@ public function getPaymentStatus()
 			// Redireccionar
 			$this->saveOrder();
 			\Session::forget('cart');
-
 			return \Redirect::to('/')
 				->with('message', 'Compra realizada de forma correcta');
+
 		}
 		return \Redirect::to('/')
 			->with('message', 'La compra fue cancelada');
@@ -190,6 +190,7 @@ public function getPaymentStatus()
 detalleventa::create([
 'idVenta'=> $idVenta,
 'idArticulo'=> $producto->idArticulo,
+'idEmpresa' =>$producto->idEmpresa,
 'Precio' => $producto->Valor,
 'Cantidad' => $producto->cantidad,
 'Estado' => 'Pendiente'

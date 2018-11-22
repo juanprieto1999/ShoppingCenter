@@ -13,6 +13,7 @@ protected $fillable=[ //permite que columnas seran caragadas en forma masiva
 'idDetalleVenta',
 'idVenta',
 'idArticulo',
+'idEmpresa',
 'Cantidad',
 'Precio',
 'Estado'
