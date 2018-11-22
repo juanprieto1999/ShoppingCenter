@@ -14,6 +14,7 @@ protected $fillable=[ //permite que columnas seran caragadas en forma masiva
 'idVenta',
 'idArticulo',
 'Cantidad',
-'Precio'
+'Precio',
+'Estado'
 ];
 }

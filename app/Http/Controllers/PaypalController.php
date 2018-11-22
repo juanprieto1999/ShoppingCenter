@@ -174,8 +174,6 @@ public function getPaymentStatus()
 		'Total_Venta' => $subtotal,
 		'Envio'=>$envio,
 		'idUsuario'=> \Auth::user()->id,
-		'Estado' => 'Pendiente'
-
 		]);
 		foreach ($cart as $producto) {
 			$this->saveOrderItem($producto, $venta->idVenta);
@@ -193,7 +191,8 @@ detalleventa::create([
 'idVenta'=> $idVenta,
 'idArticulo'=> $producto->idArticulo,
 'Precio' => $producto->Valor,
-'Cantidad' => $producto->cantidad
+'Cantidad' => $producto->cantidad,
+'Estado' => 'Pendiente'
 ]);
 
 	}
