@@ -104,13 +104,5 @@ $articulo->update();
 
 return Redirect::to('dash/articulos');
     }
-    //Cambia el estado del articulo en el dashboard tienda
-    public function destroy($id)
-   {
-    $articulo=articulo::findOrFail($id);
-    $articulo->delete(); //Actualizamos el articulo en la BD.
-
-    return Redirect::to('dash/articulos'); //Redirijir  a la vista 
-    }
 
 }

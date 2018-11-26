@@ -42,10 +42,7 @@
 						<a href="" data-toggle="modal" data-target="#modal-status-{{$art->idArticulo}}" ><button class="btn btn-warning">Cambiar Estado
 							
 						</button></a>
-						<a href="" data-toggle="modal" data-target="#modal-delete-{{$art->idArticulo}}" ><button class="btn btn-danger">
-							Eliminar
-							
-						</button></a>
+					
 							
 					</td>
 
