@@ -190,7 +190,7 @@ section{
                                         <div class="product-btns">
                                             <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">FAVORITO</span></button>
                                             <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">COMPARAR</span></button>
-                                            <button><i class="fa fa-eye"></i><a href="{{route('articulo-detail',$articulo->id)}} class="tooltipp"">DETALLES</a></button>
+                                            <a href="{{route('articulo-detail',$articulo->id)}}><button><i class="fa fa-eye"></i>DETALLES</button></a>
                                         </div>
                                     </div>
                                     <div class="add-to-cart">
