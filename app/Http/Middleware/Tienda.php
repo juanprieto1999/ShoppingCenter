@@ -13,14 +13,13 @@ class Tienda
      * @param  \Closure  $next
      * @return mixed
      */
+
+
     public function handle($request, Closure $next)
     {
-    if(auth()->check()&&auth()->user()->estado==0){
-      return redirect('/ban');
-    }
-    else{
-        return $next($request);
-    }
+
+
+
     if(auth()->user()->idempresa!=null && auth()->user()->idpersona==null ){//Condicion para identificar tienda
 
           return $next($request);//Continuar acceso  
@@ -29,6 +28,13 @@ class Tienda
             //dd('No eres una Tienda');
             return redirect('/');
         }
+    if(auth()->check()&&auth()->user()->estado==0){
+      return redirect('/ban');
+    }
+    else{
+        return $next($request);
+    }
+
 
     }
 

@@ -57,12 +57,12 @@ Route::get('cart/show',[
 ]); //mostrar el producto dentro del carrito
 
 
-Route::get('Password/reset','Auth/ForgotPasswordController@showLinkRequestForm')->name('Password.request');
-Route::post('Password/email','Auth/ForgotPasswordController@sendResetLinkEmail')->name('Password.email');
-Route::get('Password/reset/{token}','Auth/ResetPasswordController@showResetForm')->name('Password.reset');
-Route::post('Password/reset','Auth/ResetPasswordController@reset');
+// Route::get('Password/reset','Auth/ForgotPasswordController@showLinkRequestForm')->name('Password.request');
+// Route::post('Password/email','Auth/ForgotPasswordController@sendResetLinkEmail')->name('Password.email');
+// Route::get('Password/reset/{token}','Auth/ResetPasswordController@showResetForm')->name('Password.reset');
+// Route::post('Password/reset','Auth/ResetPasswordController@reset');
 
-Route::get('/','inicioController@index')->name('inicion');
+// Route::get('/','inicioController@index')->name('inicion');
 
 
 

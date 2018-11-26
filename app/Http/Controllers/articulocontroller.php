@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Input;
 use App\Http\Requests\ArticuloFormRequets;
 use DB;
 
+// dash.
 class articulocontroller extends Controller
 {
     public function index(Request $request){
