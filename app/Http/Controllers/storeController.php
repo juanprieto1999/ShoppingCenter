@@ -42,6 +42,7 @@ return Redirect::to('store'); //Guardar un articulo
 
    public function show($id)
     { 
+      dd($id);
       return view("store.show",["articulo"=>articulo::findOrFail($id)]); //Ver un articulo
       
     }

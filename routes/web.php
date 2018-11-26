@@ -111,7 +111,7 @@ Route::get('payment/status',array(
 ));
 
 //Redireccionar a vista detalles
-Route::get('articulo/{id}',[
+Route::get('detail/{id}',[
 'as' => 'articulo-detail',
 'uses'=> 'storeController@show']);
 
