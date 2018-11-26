@@ -57,9 +57,9 @@ Route::get('cart/show',[
 
 
 Route::get('Password/reset','Auth/ForgotPasswordController@showLinkRequestForm')->name('Password.request');
-Route::get('Password/email','Auth/ForgotPasswordController@sendResetLinkEmail')->name('Password.email');
+Route::post('Password/email','Auth/ForgotPasswordController@sendResetLinkEmail')->name('Password.email');
 Route::get('Password/reset/{token}','Auth/ResetPasswordController@showResetForm')->name('Password.reset');
-Route::get('Password/reset','Auth/ResetPasswordController@reset');
+Route::post('Password/reset','Auth/ResetPasswordController@reset');
 
 Route::get('/','inicioController@index')->name('inicion');
 
@@ -108,6 +108,11 @@ Route::get('payment/status',array(
 'as' => 'payment.status',
 'uses'=> 'PaypalController@getPaymentStatus'
 ));
+
+//Redireccionar a vista detalles
+Route::get('articulo/{id}',[
+'as' => 'articulo-detail',
+'uses'=> 'storeController@show']);
 
 
 
