@@ -30,20 +30,28 @@
 					<td>{{$sale->Precio}}</td>
 					<td>{{$sale->Estado}}
 					</td>
-				 {{-- 	<td>
-						 <a href="{{URL::action('articulocontroller@edit',$art->idArticulo)}}"><button class="btn btn-info">Editar</button></a> 
-						<a href="" data-toggle="modal" data-target="#modal-status-{{$art->idArticulo}}" ><button class="btn btn-warning">Cambiar Estado
-							
+				 	<td>
+				 		@if($sale->Estado=='Pendiente')
+				 		<a href="{{route('sale.statussale', [$sale->idDetalleVenta,'Confirmado'])}}"><button class="btn btn-success"> Confirmar Pedido</button></a>
+						<a href="" data-toggle="modal" data-target="#modal-status-{{$sale->idDetalleVenta}}" ><button class="btn btn-danger">
+							Cancelar Pedido
 						</button></a>
-						<a href="" data-toggle="modal" data-target="#modal-delete-{{$art->idArticulo}}" ><button class="btn btn-danger">
-							Eliminar
-							
+						@elseif($sale->Estado=='Confirmado')
+						<a href="{{route('sale.statussale', [$sale->idDetalleVenta,'Enviado'])}}"><button class="btn btn-success">Pedido Enviado</button></a>
+						<a href="" data-toggle="modal" data-target="#modal-status-{{$sale->idDetalleVenta}}" ><button class="btn btn-danger">
+							Cancelar Pedido
 						</button></a>
-							
-					</td> --}}
+						@elseif($sale->Estado=='Enviado')
+						<a href="{{route('sale.statussale', [$sale->idDetalleVenta,'Entregado'])}}"><button class="btn btn-success">Pedido Entregado</button></a>
+						@elseif($sale->Estado=='Entregado')
+						<a href="{{route('sale.statussale', [$sale->idDetalleVenta,'Finalizado'])}}"><button class="btn btn-success">Finalizar</button></a>
+						@endif 			
+							 
+					</td> 
 
 				</tr>
-				{{-- @include('DashStore.Articulo.modal')	 --}}									
+				@include('DashStore.Pedido.modal') 
+						
 				@endforeach
 			
 

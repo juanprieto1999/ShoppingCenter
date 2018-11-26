@@ -3,9 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Articulo;
-use App\Models\empresa;
-use App\Models\User;
 use DB;
 
 class DashBoardStoreController extends Controller
@@ -17,9 +14,10 @@ class DashBoardStoreController extends Controller
    }
 public function index(Request $request){
 	
-	$lista=DB::table('detalleventa')->select()->where('idEmpresa','=', auth()->user()->idempresa)->get();
+	$lista=DB::table('detalleventa')->select()->where('idEmpresa','=', auth()->user()->idempresa)->where('Estado','=','Pendiente')->get();
+	$ventas=DB::table('detalleventa')->select()->where('idEmpresa','=', auth()->user()->idempresa)->where('Estado','=','Finalizado')->get();
 
-	return view('DashStore/index',compact('lista'));
+	return view('DashStore/index',compact('lista','ventas'));
 }
 
 

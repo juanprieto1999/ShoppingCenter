@@ -14,7 +14,7 @@
 				<thead>
 					<th>Id</th>
 					<th>Nombre</th>
-					<th>Codigo</th>
+					<th>Codigo (SKU)</th>
 					<th>Categoria</th>
 					<th>Descripcion</th>
 					<th>Stock</th>

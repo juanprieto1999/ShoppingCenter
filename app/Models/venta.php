@@ -14,6 +14,7 @@ class venta extends Model
 	'idUsuario',
 	'Fecha_Hora',
 	'Envio',
-	'Total_Venta'
+	'Total_Venta',
+	'Direccion_Envio'
 	];
 }

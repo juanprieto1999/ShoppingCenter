@@ -14,6 +14,12 @@
 			<table class="table table-striped table-hover table-bordered">
 			<tr><td>Usuario:</td><td>{{ Auth::user()->name }}</td></tr>
 			<tr><td>Correo: </td><td>{{ Auth::user()->email }}</td></tr>
+			<tr><td>Direccion: </td><td>{{ $data->direccion }} 
+				<li class="fa fa-edit" ></li>  
+
+			</td></tr>
+
+
 			</table>
 		</div>
 		<div class="table-responsive">

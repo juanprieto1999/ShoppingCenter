@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\articulo;
 use App\Models\empresa;
+use App\Models\persona;
 
 class CartController extends Controller
 {
@@ -69,7 +70,9 @@ public function orderdetail(){
 	if(count(\Session::get('cart'))<=0) return redirect()->route('/');
 	$cart = \Session::get('cart');
 	$total = $this->total();
-	return view('store.order-detail',compact('cart','total'));
+	$data= persona::findOrFail(auth()->user()->idpersona);
+	\Session::put('address_',$data->direccion);
+	return view('store.order-detail',compact('cart','total','data'));
 }
 
 }

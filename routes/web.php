@@ -32,6 +32,7 @@ Route::resource('/store', 'searchController');
 Route::middleware('tienda')->group(function(){
 Route::get('/dash', 'DashBoardStoreController@index'); 
 Route::resource('/dash/sale', 'SaleController'); 
+Route::get('dash/sale/{id}/{status}', 'SaleController@Status')->name('sale.statussale');
 Route::resource('dash/articulos', 'articulocontroller');
 Route::get('dash/articulos/{id}/status', 'articulocontroller@status')->name('articulocontroler.status');
 });

@@ -5,7 +5,7 @@
   			 <div class="col-md-4">
           		<div  class="text-center" style="background-color: white;">
           			<h3>Pedidos</h3>
-					<h4>0</h4>
+					<h4>{{ $lista->count() }}</h4>
 
           		</div>
           		
@@ -14,7 +14,7 @@
           	<div class="col-md-4">
           		<div  class="text-center" style="background-color: white;">
           			<h3>Ventas</h3>
-					<h4>0</h4>
+					<h4>{{ $ventas->count() }}</h4>
 
           		</div>
           		
