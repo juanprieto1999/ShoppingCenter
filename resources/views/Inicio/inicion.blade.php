@@ -119,8 +119,6 @@ var listProduct = function()
                     <a href='javascript:;' onclick="listProduct();" data-toggle="modal" data-target="#modal-listatiendas" >Tiendas</a>
                     <a href="https://laravel-news.com">Lo mas vendido!</a>
                     <a href="https://nova.laravel.com">Promociones</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>                     
             </div>
 
@@ -136,8 +134,6 @@ var listProduct = function()
                 <div class="title m-b-md">
                     Tecnologia
                 </div>
-                
-
                 <div class="links">
                     <a href="https://laravel.com/docs">Tiendas</a>
                     <a href="https://laracasts.com">Productos</a>
@@ -184,9 +180,6 @@ var listProduct = function()
                     <a href="https://laravel.com/docs">Tiendas</a>
                     <a href="https://laracasts.com">Productos</a>
                     <a href="https://laravel-news.com">Lo mas vendido!</a>
-                    <a href="https://nova.laravel.com">Promociones</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
             </div>
         </div>

@@ -24,7 +24,7 @@ class SaleController extends Controller
 	//$venta = venta::findOrFail($lista->idVenta);
 
 	$lista=DB::table('detalleventa as dv')
-    	->join('venta as v','dv.idVenta','=','v.idVenta')->join('users as u','u.id','=','v.idUsuario')->join('articulo as a','a.','=','')
+    	->join('venta as v','dv.idVenta','=','v.idVenta')->join('users as u','u.id','=','v.idUsuario')
     	->select('v.idUsuario','v.Envio','v.Total_Venta','dv.idDetalleVenta','dv.idArticulo','dv.idEmpresa','dv.Cantidad','dv.Precio','dv.Estado','u.name as username')->where('dv.idEmpresa','=', auth()->user()->idempresa)->get(); 
 
 	return view('DashStore/Pedido/index',compact('lista'));
