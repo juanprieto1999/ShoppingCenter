@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>articulo detail</title>
+	<title></title>
 </head>
 <body>
+<h1></h1>
 
 </body>
 </html>
