@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use ShoppingCenter\Models\articulo;
+use App\Models\articulo;
 use Illuminate\Support\Facades\Redirect;
 use App\Models\empresa;
 use Illuminate\Support\Facades\Input;
@@ -42,9 +42,14 @@ return Redirect::to('store'); //Guardar un articulo
 
    public function show($id)
     { 
-      //dd($id);
-      //return view("store.show",["articulo"=>articulo::findOrFail($id)]); //Ver un articulo
-      return view("store.articulo-detail");
+       //Ver un articulo
+      $articulo=articulo::findOrFail($id);
+      
+
+      $empresa=empresa::findOrFail($articulo->idEmpresa);
+
+       //dd($articulo);
+      return view("store.articulo-detail",compact('articulo','empresa'));
     }
 
  public function destroy($id)
