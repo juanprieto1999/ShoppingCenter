@@ -21,6 +21,7 @@ use PayPal\Api\PaymentExecution;
 use PayPal\Api\Transaction;
 use App\Models\venta;
 use App\Models\detalleventa;
+use App\Models\articulo;
 
 
 class PaypalController extends Controller
@@ -184,6 +185,13 @@ public function getPaymentStatus()
 	}
 
 	protected function saveOrderItem($producto, $idVenta){
+	$stockdold=articulo::findOrfail($producto->idArticulo);
+
+
+	articulo::where('idArticulo', $producto->idArticulo)
+       ->update(['Stock' => ($stockdold->Stock - $producto->cantidad)]);
+
+
 	detalleventa::create([
 	'idVenta'=> $idVenta,
 	'idArticulo'=> $producto->idArticulo,
