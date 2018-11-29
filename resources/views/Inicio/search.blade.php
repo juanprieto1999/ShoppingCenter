@@ -286,10 +286,10 @@ height: 100px;
                                 <div class="product">
                                     <div class="product-img">
                                         <img src="{{asset('Imagenes/Empresa/'.$art->nempresa.'/'.$art->Imagen)}}" alt=""  height="200px">
-                                        <div class="product-label">
+                                       <!-- <div class="product-label">
                                             <span class="sale">-30%</span>
                                             <span class="new">NEW</span>
-                                        </div>
+                                        </div>-->
                                     </div>
                                     <div class="product-body">
                                        
@@ -297,13 +297,13 @@ height: 100px;
                                          <p class="product-category">{{$art->categoria}}</p>
                                         <h4 class="product-price">${{$art->Valor}} <del class="product-old-price">$990.00</del></h4>
                                          <p class="product-category">{{$art->nempresa}}</p>
-                                        <div class="product-rating">
+                                        <!--<div class="product-rating">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
-                                        </div>
+                                        </div>-->
                                         <div class="product-btns">
                                             <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
                                             <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
