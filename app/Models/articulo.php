@@ -19,7 +19,8 @@ class articulo extends Model
 'Stock',
 'Descripcion',
 'Estado',
-'Valor'
+'Valor',
+'isNew'
 
 ];
 // QUERY SCOPE, EXTENDEMOS LA CAPACIDAD DE ELOQUENT, FORMA DE HACER CONSULTAS RAPIDAS

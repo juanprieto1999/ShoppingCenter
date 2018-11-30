@@ -37,11 +37,11 @@
 			</div>
 				<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
 					<label for="codigo">Codigo</label>
-				<input type="text" name="Codigo" required value="{{ $articulo->Codigo }}" class="form-control">
+				<input type="text" name="Codigo"  value="{{ $articulo->Codigo }}" class="form-control">
 			</div>
 				<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
 					<label for="stock">Stock</label>
-				<input type="text" name="Stock"  value="{{$articulo->Stock }}" class="form-control" >
+				<input type="number" name="Stock"  value="{{$articulo->Stock }}"  min="0" class="form-control" >
 			</div>
 				<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
 					<label for="Descripcion">Descripcion</label>
