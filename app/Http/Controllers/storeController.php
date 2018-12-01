@@ -23,7 +23,7 @@ if($validar->Estado==1){
  $empresa=DB::table('empresa')->select('idEmpresa','Nombre','Imagen','Descripcion','Estado')->where('idEmpresa','=',$id)->get(); //Consulta a la tabla empresa para traer sus datos.
  $articulos=DB::table('articulo as a')
             ->join('empresa as e','a.idEmpresa','=','e.idEmpresa')
-            ->select('a.idArticulo','a.Nombre','e.Nombre as empresa','a.Imagen','a.Estado','a.Valor')
+            ->select('a.idArticulo','a.Nombre','e.Nombre as empresa','a.Imagen','a.Estado','a.Valor','a.isNew')
             ->where('a.Estado','=','1')
             ->where('e.idEmpresa','=',$id)
             ->orderby('a.idArticulo','desc')

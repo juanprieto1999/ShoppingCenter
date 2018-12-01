@@ -169,10 +169,12 @@ section{
                                 <div class="product">
                                     <div class="product-img">
                                         <img src="{{asset('Imagenes/Empresa/'.$art->empresa.'/'.$art->Imagen)}}" alt=""  height="200px">
-                                        <!--<div class="product-label">
+                                        <div class="product-label">
                                             <span class="sale">-30%</span>
+                                            @if($art->isNew == 1)
                                             <span class="new">NUEVO</span>
-                                        </div>-->
+                                            @endif
+                                        </div>
                                     </div>
                                     <div class="product-body">
                                        
@@ -190,7 +192,8 @@ section{
                                         <div class="product-btns">
                                             <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">FAVORITO</span></button>
                                             <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">COMPARAR</span></button>
-                                           <button class="quick-view"> <a href="{{ route('articulo-detail',$art->idArticulo) }}"><i class="fa fa-eye"></i><span class="tooltipp">DETALLES</span></button></a>
+                                            {{-- <a href="{{ route('articulo-detail',$art->idArticulo) }}"> <i class="fa fa-eye"></i><span class="tooltipp">DETALLES</span></a>--}}
+                                            <button class="quick-view"> <a href="{{ route('articulo-detail',$art->idArticulo) }}"><i class="fa fa-eye"></i><span class="tooltipp">DETALLES</span></button></a>
                                         </div>
                                     </div>
                                     <div class="add-to-cart">

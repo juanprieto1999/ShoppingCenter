@@ -46,7 +46,7 @@
 				<input type="text" name="Descripcion" required value="{{old('Descripcion')}}" class="form-control" placeholder="Descripcion Del Articulo...">
 			</div>
 			<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
-					<label for="valor">Valor</label>
+				<label for="valor">Valor</label>
 				<input type="text" name="Valor" required value="{{old('Valor')}}" class="form-control" placeholder="Ingrese el valor del producto">
 			</div>
 			<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
@@ -64,6 +64,13 @@
 
 		{!!Form::close()!!}
 </div>
+<div class="col-lg-6">
+<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+				<label for="Nombre">Nombre</label>
+				<input type="text" name="Nombre" required value="{{old('Nombre')}}" class="form-control" placeholder="Nombre...">
+			</div>
+	</div>
+
 </div>
 {{--
 <script > 
