@@ -26,12 +26,12 @@ class ArticuloFormRequets extends FormRequest
       //Reglas para validar datos a guardar
         return [
           'idCategoria'=>'required',
-           'Codigo'=>'required|max:20',
+           'Codigo'=>'max:20',
            'Nombre'=>'required|max:50',
            'Descripcion'=>'max:100',
            'Imagen'=>'mimes:jpeg,bmp,png',
-           'Stock'=>'required|numeric',
+           'Stock'=>'numeric|min:0',
            'Valor'=>'required|max:15'
-        ];
+          ];
     }
 }

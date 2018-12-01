@@ -1,8 +1,9 @@
 @extends ('layouts.DashboardStore')
 @section ('contenido')
+
 <div>
 	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-		<h3>Nueva Articulo</h3>
+		<h3>Nuevo Articulo</h3>
 		@if (count($errors)>0)
 		<div class="alert alert-danger">
 			<ul>
@@ -32,11 +33,13 @@
 			</div>
 				<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
 					<label for="codigo">Codigo</label>
-				<input type="text" name="Codigo" required value="{{old('Codigo')}}" class="form-control" placeholder="Codigo del articulo...">
+				<input type="text" name="Codigo"  value="{{old('Codigo')}}" class="form-control" placeholder="Codigo del articulo...">
 			</div>
-				<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+			<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
 					<label for="stock">Stock</label>
-				<input type="text" name="Stock" required value="{{old('Stock')}}" class="form-control" placeholder="Stock Del Articulo...">
+				<input type="number" name="Stock" id="Stock" value="0" class="form-control" min="0" >
+				 <input type="checkbox" name="checkbox" id="checkbox"> Producto sin Stock
+
 			</div>
 				<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
 					<label for="Descripcion">Descripcion</label>
@@ -62,5 +65,26 @@
 		{!!Form::close()!!}
 </div>
 </div>
-	
+{{--
+<script > 
+function on(){
+ document.getElementById("Stock").disabled = true;
+}
+
+function off(){
+ document.getElementById("Stock").disabled = false;
+}
+
+var checkbox = document.getElementById('checkbox');
+
+checkbox.addEventListener("change", comprueba, false);
+
+function comprueba(){
+  if(checkbox.checked){
+      on();
+  }else{
+     off();
+  }
+}
+</script>--}}
 @endsection
