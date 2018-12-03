@@ -2188,3 +2188,21 @@ textarea.input {
     margin-top: 10px;
   }
 }
+.table-cart{
+  background-color: white;
+  border-radius: 1em;
+  margin-bottom: 30px;
+  padding: 1em;
+  border-style: groove;
+  text-align: center;
+  width: 80%;
+  margin-left: 10%;
+
+}
+.table-cart img{
+  width: 100px;
+}
+.table-cart td{
+  width: 10%;
+}
+
