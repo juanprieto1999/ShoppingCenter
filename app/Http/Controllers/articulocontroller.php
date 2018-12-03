@@ -101,7 +101,13 @@ return Redirect::to('dash/articulos'); //Redirijir  a la vista
         $articulo->Descripcion=$request->get('Descripcion');
         $articulo->Estado='1';
         $articulo->Valor=$request->get('Valor');
-     
+        if (Input::get('checkbox')) {
+            // El usuario marcó el checkbox 
+        $articulo->isNew=1;
+        } else {
+            // El usuario NO marcó el chechbox
+        $articulo->isNew=0;
+        }
 
         if(Input::hasFile('Imagen')){
             $file=Input::file('Imagen');

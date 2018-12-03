@@ -13,6 +13,7 @@ class venta extends Model
 	'idVenta',
 	'idUsuario',
 	'Fecha_Hora',
+	'Forma_Pago',
 	'Envio',
 	'Total_Venta',
 	'Direccion_Envio'

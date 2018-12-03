@@ -286,13 +286,14 @@ height: 100px;
                                 <div class="product">
                                     <div class="product-img">
                                         <img src="{{asset('Imagenes/Empresa/'.$art->nempresa.'/'.$art->Imagen)}}" alt=""  height="200px">
-                                       <!-- <div class="product-label">
-                                            <span class="sale">-30%</span>
-                                            <span class="new">NEW</span>
-                                        </div>-->
-                                         @if($art->isNew == 1)
+                                        <div class="product-label">
+                                          {{--  <span class="sale">-30%</span>--}}
+                                        @if($art->isNew == 1)
                                             <span class="new">NUEVO</span>
                                          @endif
+                                            
+                                        </div>
+                                   
                                     </div>
                                     <div class="product-body">
                                        
