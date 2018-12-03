@@ -34,13 +34,15 @@
  		<!-- Google font -->
  		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
  		<!-- Bootstrap -->
- 		<link type="text/css" rel="stylesheet" href="{{('css/bootstrap.min.css')}}"/>
+ 		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+ 		
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
         <!-- Slick -->
         <link type="text/css" rel="stylesheet" href="{{  asset('css/slick.css')  }}"/>
         <link type="text/css" rel="stylesheet" href="{{ asset('css/slick-theme.css') }} "/>  
         <link type="text/css" rel="stylesheet" href="{{ asset('css/nouislider.min.css') }} "/>
         <!-- Font Awesome Icon -->
-        <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }} "/>
+        <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }} ">
         <!-- Custom stlylesheet -->
         <link type="text/css" rel="stylesheet" href="{{ asset('css/style.css') }} "/>
 
@@ -58,10 +60,29 @@
 				<!-- row -->
 				<div class="row">
 					<!-- Product main img -->
+					<div class="col-md-2  col-md-pull-5">
+						<div id="product-imgs">
+							<div class="product-preview">
+								<img src="{{ asset('Imagenes/Empresa/'.$empresa->Nombre.'/'.$articulo->Imagen)}}" alt="{{$articulo ->Nombre}}" alt="">
+							</div>
+
+							<div class="product-preview">
+								<img src="{{ asset('Imagenes/Empresa/'.$empresa->Nombre.'/'.$articulo->Imagen)}}" alt="{{$articulo ->Nombre}}" alt="">
+							</div>
+
+							<div class="product-preview">
+								<img src="./img/product06.png" alt="">
+							</div>
+
+							<div class="product-preview">
+								<img src="./img/product08.png" alt="">
+							</div>
+						</div>
+					</div>
 					<div class="col-md-5 col-md-push-2">
 						<div id="product-main-img">
 							<div class="product-preview">
-								<img src="{{ asset('Imagenes/Empresa/'.$empresa->Nombre.'/'.$articulo->Imagen)}}" alt="{{$articulo ->Nombre}}">
+								<img src="{{ asset('Imagenes/Empresa/'.$empresa->Nombre.'/'.$articulo->Imagen)}}" alt="{{$articulo ->Nombre}}" alt="">
 							</div>
 
 							<div class="product-preview">
@@ -80,23 +101,7 @@
 					<!-- /Product main img -->
 
 					<!-- Product thumb imgs -->
-					<div class="col-md-2  col-md-pull-5">
-						<div id="product-imgs">
-							<div class="product-preview">
-								<img src="{{ asset('Imagenes/Empresa/'.$empresa->Nombre.'/'.$articulo->Imagen)}}" alt="">
-							</div>
-
-							<div class="product-preview">
-								<img src="{{ asset('Imagenes/Empresa/'.$empresa->Nombre.'/'.$articulo->Imagen)}}" alt="">
-							</div>
-
-							<div class="product-preview">
-								<img  src="{{ asset('Imagenes/Empresa/'.$empresa->Nombre.'/'.$articulo->Imagen)}}" alt="">
-							</div>
-
-							
-						</div>
-					</div>
+					
 					<!-- /Product thumb imgs -->
 
 					<!-- Product details -->
@@ -407,7 +412,7 @@
 					<div class="col-md-3 col-xs-6">
 						<div class="product">
 							<div class="product-img">
-								<img src="./Imagenes/bebida2.jpg" alt="">
+								<img src="./img/product01.png" alt="">
 								<div class="product-label">
 									<span class="sale">-30%</span>
 								</div>
@@ -469,7 +474,6 @@
 					<!-- product -->
 					<div class="col-md-3 col-xs-6">
 						<div class="product">
-							
 							<div class="product-img">
 								<img src="./img/product03.png" alt="">
 							</div>
