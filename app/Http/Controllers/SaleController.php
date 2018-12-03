@@ -10,10 +10,9 @@ use DB;
 
 class SaleController extends Controller
 {
-    //Listado de Pedidos.
      public function __construct()
     {
-    
+        
         $this->middleware('auth');
     }
 
