@@ -37,7 +37,7 @@
 
 @if(count($cart))
 <div class="col-md-12 col-sm-12">
-            <h1>Shopping cart</h1>
+            <h1>Carrito de compras</h1>
 
 <div class="table-cart">
 	<p >
