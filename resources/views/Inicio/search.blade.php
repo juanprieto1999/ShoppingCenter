@@ -290,6 +290,9 @@ height: 100px;
                                             <span class="sale">-30%</span>
                                             <span class="new">NEW</span>
                                         </div>-->
+                                         @if($art->isNew == 1)
+                                            <span class="new">NUEVO</span>
+                                         @endif
                                     </div>
                                     <div class="product-body">
                                        

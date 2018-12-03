@@ -7,7 +7,7 @@
 </style>
 <H1>Detalle de Producto</H1>
 
-<!--<div class="product-block">
+{{--} <div class="product-block">
 	<img  src="{{ asset('Imagenes/Empresa/'.$empresa->Nombre.'/'.$articulo->Imagen)}}" alt="{{$articulo ->Nombre}}" width="300">  
 </div>
 <div class="product-block">
@@ -18,7 +18,7 @@
 </div>
 <div class="product-block">
 	<p>{{($articulo->Valor)}}</p>
-</div>-->
+</div>--}}
 
 
 	<head>

@@ -21,8 +21,7 @@ class articulocontroller extends Controller
     ->join('categoria as c','a.idCategoria','=','c.idCategoria') //Relacionar 2 tablas
     ->select('a.idArticulo','a.Nombre','a.Codigo','a.Stock','a.Descripcion','c.Nombre as categoria','a.Imagen','a.Estado','a.Valor','a.idEmpresa')
     ->where('a.idEmpresa','=',$idempresa)
-    ->where('a.Nombre','LIKE','%'.$query.'%')
-    ->where('a.Codigo','LIKE','%'.$query.'%')->get(); 
+    ->where('a.Nombre','LIKE','%'.$query.'%')->get(); 
 	return view('DashStore/Articulo/index',["articulos"=>$articulos,"searchText"=>$query]);
 
 }
@@ -61,7 +60,15 @@ public function create()
         $articulo->Descripcion=$request->get('Descripcion');
         $articulo->Estado='1'; //Guardamos con 1, para dejarla activida en la BD.
         $articulo->Valor=$request->get('Valor');
-    //
+        if (Input::get('checkbox')) {
+            // El usuario marcó el checkbox 
+        $articulo->isNew=1;
+        } else {
+            // El usuario NO marcó el chechbox
+        $articulo->isNew=0;
+        }
+
+
         //Funcion que permite traer el nombre de la imagen de la vista
         if(Input::hasFile('Imagen')){
             $file=Input::file('Imagen'); //Nueva variable
@@ -94,7 +101,7 @@ return Redirect::to('dash/articulos'); //Redirijir  a la vista
         $articulo->Descripcion=$request->get('Descripcion');
         $articulo->Estado='1';
         $articulo->Valor=$request->get('Valor');
-        //
+     
 
         if(Input::hasFile('Imagen')){
             $file=Input::file('Imagen');
