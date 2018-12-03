@@ -18,10 +18,15 @@
 width: 100%;
 height: 100px;
 
+}
+body{
+      padding-top: 7%;
+}
 
 </style>
 
-<div class="section">
+<body>
+    <div class="section">
 <div class="container">
   <div class="row" >
                     <div class="col-md-12">
@@ -342,6 +347,9 @@ height: 100px;
             </div>
             <!-- /container -->
         </div>
+    </body>
+
+
         <!-- /SECTION -->
         <!-- jQuery Plugins -->
         <script src="{{ asset('js/Store/jquery.min.js') }}"></script>
