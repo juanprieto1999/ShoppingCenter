@@ -19,7 +19,7 @@
 
 
 
-    <script type="text/javascript">
+   {{-- <script type="text/javascript">
      $(document).ready(function() {
   $('#titulo').hide(0);
 
@@ -45,7 +45,7 @@ function medidas(id){
 
 
 
-</script>
+</script>--}}
 <header>
 <nav class="navbar fixed-top navbar-expand-lg navbar-light " id="navid" name="navid">
 
