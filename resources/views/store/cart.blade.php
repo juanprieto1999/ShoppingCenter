@@ -22,6 +22,9 @@
 <style >
 	body{
 		background-color: rgb(234, 234, 234);
+        padding-top: 7%;
+  }
+
 	}
 	h1{
 		text-align: center;

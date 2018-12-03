@@ -4,6 +4,9 @@
 	h1{
 		text-align: center;
 	}
+	body{
+		padding-top: 7%;
+	}
 </style>
 <H1>Detalle de Producto</H1>
 
