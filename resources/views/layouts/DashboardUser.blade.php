@@ -62,7 +62,7 @@
             </div>
           </li>
            <li class="nav-item">
-            <a class="nav-link" href="{{ route('mispedidos') }}">
+            <a class="nav-link" href="index-2.html">
               <i class="fa fa-home menu-icon"></i>
               <span class="menu-title">Pedidos</span>
             </a>
