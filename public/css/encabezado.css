@@ -5,5 +5,6 @@ h1{
   color: rgba(214, 0, 0, 0.8);
 }
 nav{
-	border-style:ridge;
+	border-bottom: groove;
+	background-color: rgba(22, 22, 22, 0.38);
 }

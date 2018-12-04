@@ -16,6 +16,11 @@
   <link rel="stylesheet" href="{{ asset('css/DashUser/style.css') }}">
   <!-- endinject -->
 </head>
+<style >
+  body{
+    padding-top: 7%;
+  }
+</style>
 
 <body>
 @include('layouts.encabezado')

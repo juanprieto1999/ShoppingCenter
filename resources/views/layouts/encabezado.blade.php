@@ -40,12 +40,19 @@ function medidas(id){
     return {w:document.getElementById(id).offsetWidth,h:document.getElementById(id).offsetHeight}
 }
 
-
-
-
 </script>--}}
+<script type="text/javascript">
+      $(window).scroll(function() {
+        if ($("#menu").offset().top > 100) {
+            $("#menu").addClass("bg-dark");
+        } else {
+            $("#menu").removeClass("bg-dark");
+        }
+      });
+</script>
+
 <header>
-<nav class="navbar fixed-top navbar-expand-lg navbar-light " id="navid" name="navid">
+<nav id="menu" class="navbar fixed-top navbar-expand-lg navbar-light  ">
 
      <div id="titulo"  >
      <!-- <h1>ShoppingCenter</h1>-->
@@ -101,16 +108,13 @@ function medidas(id){
 
 
 </ul>
+
       </nav>
+
 </header>
 @yield('content')
 
-    
-
-
-
-
-
 
   </body>
+  
 </html>

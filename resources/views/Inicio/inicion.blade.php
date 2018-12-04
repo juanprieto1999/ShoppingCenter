@@ -16,14 +16,12 @@
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
                 height: 100vh;
-                
-               
+               }
 
-                
-            }
              .carousel-inner img {
               width: 100%;
-              height: 662px;
+              height: 656px;
+
               
               }
 
@@ -72,6 +70,10 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+            #color{
+              color: rgba(0, 0, 0, 0.67);
+            }
+            
         </style>
   <script>
    
@@ -99,6 +101,7 @@ var listProduct = function()
       @if(\Session::has('message'))
           @include('store.partials.message')
       @endif
+      <section>
         <div id="demo" class="carousel slide" data-ride="carousel">
   <ul class="carousel-indicators">
     <li data-target="#demo" data-slide-to="0" class="active"></li>
@@ -106,7 +109,7 @@ var listProduct = function()
     <li data-target="#demo" data-slide-to="2"></li>
     <li data-target="#demo" data-slide-to="3"></li>
   </ul>
-  <div class="carousel-inner">
+  <div id="color" class="carousel-inner">
     <div class="carousel-item active">
       <img src="{{ asset('Imagenes/imgnueva.jpg') }}" alt="ShoppingCenter">
       <div class="carousel-caption">
@@ -196,6 +199,7 @@ var listProduct = function()
   </a>
    @include('Inicio.modalist')
 </div> 
+</section>
     </body>
 </html>
 @endsection
