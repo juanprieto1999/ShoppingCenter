@@ -42,6 +42,7 @@ Route::resource('/store', 'searchController');
 Route::middleware('Usuariom')->group(function(){
 Route::resource('/account/user', 'userController')->except('index'); //Configuracion De Cuenta
 Route::get('/dashuser', 'DashBoardUserController@index');
+Route::get('/mispedidos', 'pedidocontroller@index')->name('mispedidos');
 });
 
 Route::middleware('tienda')->group(function(){
