@@ -80,10 +80,10 @@ function medidas(id){
 
   </a>
     <li class="nav-item px-2">
-      <a class="nav-link" href="{{ route('login') }}">Iniciar Sesion</a>
+      <a class="nav-link"  style="color:white" href="{{ route('login') }}">Iniciar Sesion</a>
     </li>
       <li class="nav-item px-2">
-      <a class="nav-link" href="{{ url('/registro/user')}}">Registro</a>
+      <a class="nav-link"  style="color:white" href="{{ url('/registro/user')}}">Registro</a>
     </li>
   @else
 

@@ -83,7 +83,7 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="almacen/articulo"><i class="fa fa-circle-o"></i> Nada</a></li>
+                <li><a href="{{ url('dashadmin/categorias') }}"><i class="fa fa-circle-o"></i> Categorias</a></li>
                 <li><a href="categoria"><i class="fa fa-circle-o"></i> Nada</a></li>
               </ul>
             </li>
