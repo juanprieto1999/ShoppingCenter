@@ -48,10 +48,14 @@ public function trash(){
 
 
 public function update(articulo $articulo,$cantidad){
+if($cantidad<=$articulo->Stock){
 $cart=\Session::Get('cart');//Recibe la variable y la guarda en cart
 $cart[$articulo->idArticulo]->cantidad = $cantidad;
 \Session::put('cart',$cart); //Actualizar variable sesion
 return redirect()->route('cart-show');//finalmente redirijira a show
+}else{
+return redirect()->route('cart-show')->with('errors','Limite exedido');
+}
 }
 
 private function total()

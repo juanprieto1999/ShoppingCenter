@@ -32,6 +32,14 @@
 	
 </style>
 <body>
+@if (count($errors))
+		<div class="alert alert-danger">
+			<ul>
+				<li>{{$errors}}</li>
+		
+			</ul>
+		</div>
+@endif
 
 
 
@@ -65,7 +73,7 @@
 				<td>{{ $item->Nombre }}</td>
 				<td>${{number_format($item->Valor,2) }}</td>
 				<td>
-					<input type="number" min="1" value="{{ $item->cantidad}}" 
+					<input type="number" min="1" max="{{$item->Stock}}" value="{{$item->cantidad}}" 
 					id="product_{{$item->idArticulo}}">
 						<a class="btn btn-warning" href='javascript:;' onclick="actualizar(this);"
 						data-href="{{route('cart-update',$item->idArticulo)}}" 
