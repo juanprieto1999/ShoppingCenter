@@ -103,7 +103,7 @@
             <h1>Shopping cart</h1>
             <div class="shopping-cart-page">
               <div class="shopping-cart-data clearfix">
-                <p>Your shopping cart is empty!</p>
+                <p>Aqui no hay nada :(</p>
               </div>
             </div>
           </div>

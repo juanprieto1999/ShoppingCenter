@@ -25,6 +25,7 @@ $condicion="";
     	->join('categoria as c','a.idCategoria','=','c.idCategoria') //Relacionar 2 tablas.
     	->join('empresa as emp','a.idEmpresa','=','emp.idEmpresa')
     	->select('a.idArticulo','a.Nombre','a.Codigo','a.Stock','a.Descripcion','c.Nombre as categoria','emp.Nombre as nempresa','a.Imagen','a.Estado','a.Valor','a.idEmpresa','a.isNew')
+      ->where('a.Estado','=',1)
     ->where('a.Nombre','LIKE','%'.$query.'%')->orwhere('c.Nombre','LIKE','%'.$query.'%')->orwhere('emp.Nombre','LIKE','%'.$query.'%')->paginate('10'); //Busqueda inteligente, tiene como funcion buscar datos relacionados con la BD y los datos solicitados
 
 	//$articulos= Articulo::all();
