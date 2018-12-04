@@ -22,11 +22,31 @@ Route::get('/ban', function () {
 Auth::routes();
 
 
+// Route::get('/pdf', function () {
+// $pdf = PDF::loadView('Gestion.facturacliente');
+// return $pdf->stream();
+// });
+
+
+
+// Route::get('/pdf/{factura}/download', function ($factura) {
+// $pdf = PDF::loadView('Gestion.facturacliente',['factura'=>$factura]);
+// return $pdf->stream();
+// });
+
 Route::get('/registro/{tipo}','Auth\RegisterController@showRegistrationForm');
 Route::get('store/{id}','storeController@index')->where(['id' => '[\d]+']); //Ruta para una tienda, validando que sea un id.
 Route::get('/liststores', 'inicioController@listatiendas'); //Ruta para listar las tiendas en el modal.
 Route::resource('/serch', 'searchController'); //Ruta para la busqueda inteligente en toda la tienda.
 Route::resource('/store', 'searchController');
+
+
+
+Route::middleware('Usuariom')->group(function(){
+Route::resource('/account/user', 'userController')->except('index'); //Configuracion De Cuenta
+Route::get('/dashuser', 'DashBoardUserController@index');
+Route::get('/mispedidos', 'pedidocontroller@index')->name('mispedidos');
+});
 
 
 Route::middleware('tienda')->group(function(){
