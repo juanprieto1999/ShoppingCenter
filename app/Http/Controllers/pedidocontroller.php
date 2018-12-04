@@ -9,14 +9,17 @@ class pedidocontroller extends Controller
 {
   public function index(Request $request){
 
-	$pedido=DB::table('venta as v')->select('idVenta','idUsuario','Fecha_Hora','Total_Venta')->where('idUsuario','=',auth()->user()->id)->get();
+	$pedido=DB::table('venta as v')
+	->select('v.idVenta','v.idUsuario','v.Fecha_Hora','v.Total_Venta')
+	->where('v.idUsuario','=',auth()->user()->id)->get();
 
-	$articulo=DB::table('detalleventa as dv') 
-    ->join('articulo as a','dv.idArticulo','=','a.idArticulo')
-    ->join('venta as v', 'dv.idVenta','=','v.idVenta') //Relacionar 2 tablas
-    ->select('a.Nombre','a.Imagen','a.idEmpresa','dv.idDetalleVenta','dv.idVenta','dv.idArticulo','dv.cantidad','dv.Precio','dv.Estado','v.Fecha_Hora')
-    ->where('v.idUsuario','=',auth()->user()->id)->get(); 
+	$articulos=DB::table('detalleventa as dv')
+	->join('venta as v','v.idVenta','=','dv.idVenta')
+	->join('articulo as a','dv.idArticulo','=','a.idArticulo')
+	->join('empresa as e','e.idEmpresa','=','dv.idEmpresa')
+	->select('dv.idDetalleVenta','dv.idArticulo','dv.idVenta','dv.idEmpresa','dv.Cantidad','dv.Precio','dv.Estado','a.Nombre','a.Imagen','e.Nombre as empresa')->get();
+	
 
-	return view('DashUser/Pedido/index',compact('pedido'));
+	return view('DashUser/Pedido/index',compact('pedido','articulos'));
 	}
 }
