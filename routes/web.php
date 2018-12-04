@@ -22,27 +22,12 @@ Route::get('/ban', function () {
 Auth::routes();
 
 
-Route::get('/pdf', function () {
-$pdf = PDF::loadView('Gestion.facturacliente');
-return $pdf->stream();
-});
-
-
-
-// Route::get('/pdf/{factura}/download', function ($factura) {
-// $pdf = PDF::loadView('Gestion.facturacliente',['factura'=>$factura]);
-// return $pdf->stream();
-// });
 Route::get('/registro/{tipo}','Auth\RegisterController@showRegistrationForm');
 Route::get('store/{id}','storeController@index')->where(['id' => '[\d]+']); //Ruta para una tienda, validando que sea un id.
 Route::get('/liststores', 'inicioController@listatiendas'); //Ruta para listar las tiendas en el modal.
 Route::resource('/serch', 'searchController'); //Ruta para la busqueda inteligente en toda la tienda.
 Route::resource('/store', 'searchController');
 
-Route::middleware('Usuariom')->group(function(){
-Route::resource('/account/user', 'userController')->except('index'); //Configuracion De Cuenta
-Route::get('/dashuser', 'DashBoardUserController@index');
-});
 
 Route::middleware('tienda')->group(function(){
 Route::get('/dash', 'DashBoardStoreController@index'); 
@@ -51,14 +36,13 @@ Route::get('dash/sale/{id}/{status}', 'SaleController@Status')->name('sale.statu
 Route::resource('dash/articulos', 'articulocontroller');
 Route::get('dash/articulos/{id}/status', 'articulocontroller@status')->name('articulocontroler.status');
 });
+
 Route::middleware('admin')->group(function(){
 Route::get('/dashadmin', 'DashBoardAdminController@index');
 Route::get('/dashadmin/stores', 'DashBoardAdminController@tindex');
-Route::resource('/dashadmin/users', 'userController');//cambiada
+Route::resource('/dashadmin/users', 'userController');
 Route::resource('store', 'storeController');
 });
-
-Route::get('/account', 'userController@profile_edit')->name('useraccount');
 
 
 
