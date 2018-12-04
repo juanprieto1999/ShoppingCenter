@@ -39,7 +39,7 @@ Route::get('store/{id}','storeController@index')->where(['id' => '[\d]+']); //Ru
 Route::get('/liststores', 'inicioController@listatiendas'); //Ruta para listar las tiendas en el modal.
 Route::resource('/serch', 'searchController'); //Ruta para la busqueda inteligente en toda la tienda.
 Route::resource('/store', 'searchController');
-
+Route::get('/account', 'userController@profile_edit')->name('useraccount');
 
 
 Route::middleware('Usuariom')->group(function(){
