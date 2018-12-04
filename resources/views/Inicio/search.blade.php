@@ -18,10 +18,15 @@
 width: 100%;
 height: 100px;
 
+}
+body{
+      padding-top: 7%;
+}
 
 </style>
 
-<div class="section">
+<body>
+    <div class="section">
 <div class="container">
   <div class="row" >
                     <div class="col-md-12">
@@ -286,14 +291,13 @@ height: 100px;
                                 <div class="product">
                                     <div class="product-img">
                                         <img src="{{asset('Imagenes/Empresa/'.$art->nempresa.'/'.$art->Imagen)}}" alt=""  height="200px">
-                                        <div class="product-label">
-                                          {{--  <span class="sale">-30%</span>--}}
-                                        @if($art->isNew == 1)
+                                       <!-- <div class="product-label">
+                                            <span class="sale">-30%</span>
+                                            <span class="new">NEW</span>
+                                        </div>-->
+                                         @if($art->isNew == 1)
                                             <span class="new">NUEVO</span>
                                          @endif
-                                            
-                                        </div>
-                                   
                                     </div>
                                     <div class="product-body">
                                        
@@ -343,6 +347,9 @@ height: 100px;
             </div>
             <!-- /container -->
         </div>
+    </body>
+
+
         <!-- /SECTION -->
         <!-- jQuery Plugins -->
         <script src="{{ asset('js/Store/jquery.min.js') }}"></script>

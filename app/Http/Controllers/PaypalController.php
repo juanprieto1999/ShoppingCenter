@@ -22,7 +22,6 @@ use PayPal\Api\Transaction;
 use App\Models\venta;
 use App\Models\detalleventa;
 use App\Models\articulo;
-use Carbon\Carbon;
 
 
 class PaypalController extends Controller
@@ -168,18 +167,15 @@ public function getPaymentStatus()
 		$subtotal = 0;
 		$cart=\Session::get('cart');
 		$envio=100;
-		$mytime= Carbon::now('America/Bogota');
 		foreach ($cart as $producto) {
 			$subtotal += $producto->cantidad * $producto->Valor;
-		}	
-   		
+		}
+
 		$venta = venta::create([
 		'Total_Venta' => $subtotal,
 		'Envio'=>$envio,
 		'idUsuario'=> \Auth::user()->id,
 		'Direccion_Envio' => \Session::get('address_'),
-		'Fecha_Hora'=>$mytime->ToDateTimeString(),
-		'Forma_Pago'=>'Paypal'
 		]);
 		foreach ($cart as $producto) {
 			$this->saveOrderItem($producto, $venta->idVenta);
