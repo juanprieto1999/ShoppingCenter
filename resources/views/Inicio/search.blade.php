@@ -70,7 +70,8 @@ body{
                 </div>
             </div>
         </div>
-        <!-- SECTION -->
+{{--
+ --        <!-- SECTION -->
         <div class="section">
                   <!-- container -->
             <div class="container">      
@@ -252,7 +253,7 @@ body{
                         </div>
                         <!-- /aside Widget -->
                     </div>
-                    <!-- /ASIDE -->
+                    <!-- /ASIDE -->-
 
                     <!-- STORE -->
                     <div id="store" class="col-md-9">
@@ -281,13 +282,14 @@ body{
                             </ul>
                         </div>
                         <!-- /store top filter -->
-
+--}}
                         <!-- store products -->
+                        <div class="container">
                         <div class="row">
                             <!-- product -->
                         @foreach ($articulos as $art)
 
-                            <div class="col-md-4 col-xs-6">
+                            <div class="col-md-3 col-xs-6">
                                 <div class="product">
                                     <div class="product-img">
                                         <img src="{{asset('Imagenes/Empresa/'.$art->nempresa.'/'.$art->Imagen)}}" alt=""  height="200px">

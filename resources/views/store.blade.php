@@ -79,20 +79,17 @@ section{
                
 		@foreach ($empresa as $empre)
 
-<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img  id="imgempresa" src="{{ asset('Imagenes/Empresa/'.$empre->Nombre.'/'.$empre->Imagen)}}" alt="{{$empre ->Nombre}}">
-      	<div class="carousel-caption">
-    		<h1>{{$empre ->Nombre}}</h1>
-   			<p>{{$empre ->Descripcion}}</p>
-  		</div>
-    </div>
-    </div>
-
- 
-
-  </div>
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img  id="imgempresa" src="{{ asset('Imagenes/Empresa/'.$empre->Nombre.'/'.$empre->Imagen)}}" alt="{{$empre ->Nombre}}">
+                  	<div class="carousel-caption">
+                		<h1>{{$empre ->Nombre}}</h1>
+               			<p>{{$empre ->Descripcion}}</p>
+              		</div>
+                </div>
+                </div> 
+            </div>
 
 
 
@@ -108,7 +105,7 @@ section{
      </div>
     <!--ROW-->
    
-    <!-- SECTION -->
+    {{-- <!-- SECTION -->
   <!-- SECTION -->
         <div class="section">
              <!-- container -->
@@ -160,12 +157,13 @@ section{
                                 <li class="active"><i class="fa fa-th"></i></li>
                                 <li><a href="#"><i class="fa fa-th-list"></i></a></li>
                             </ul>
-                     </div>    
+                     </div> --}}   
+                     <div class="container">
 					<div class="row">
   						 <!--product -->
                         @foreach ($articulos as $art)
 
-                            <div class="col-md-4 col-xs-6">
+                            <div class="col-md-3 col-xs-6">
                                 <div class="product">
                                     <div class="product-img">
                                         <img src="{{asset('Imagenes/Empresa/'.$art->empresa.'/'.$art->Imagen)}}" alt=""  height="200px">
@@ -193,7 +191,7 @@ section{
                                             <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">FAVORITO</span></button>
                                             <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">COMPARAR</span></button>
                                             {{-- <a href="{{ route('articulo-detail',$art->idArticulo) }}"> <i class="fa fa-eye"></i><span class="tooltipp">DETALLES</span></a>--}}
-                                            <button class="quick-view"> <a href="{{ route('articulo-detail',$art->idArticulo) }}"><i class="fa fa-eye"></i><span class="tooltipp">DETALLES</span></button></a>
+                                            <button class="quick-view"> <a href="{{ route('articulo-detail',$art->idArticulo) }}"><i class="fa fa-eye"></i><span class="tooltipp">DETALLES</span></button>
                                         </div>
                                     </div>
                                     <div class="add-to-cart">
@@ -215,11 +213,9 @@ section{
                             </ul>
                         </div>
                         <!-- /store bottom filter -->
-                </div>
 </div>
-</div>
-</div>
-               </body>
+@include('layouts/footer')
+        </body>
         
 {{-- <a>
 <img src="{{asset('Imagenes/Empresa/'.$art->empresa.'/'.$art->Imagen)}}"   >
