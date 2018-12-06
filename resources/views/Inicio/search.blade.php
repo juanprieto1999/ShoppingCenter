@@ -347,6 +347,7 @@ body{
             </div>
             <!-- /container -->
         </div>
+        @include('layouts/footer')
     </body>
 
 

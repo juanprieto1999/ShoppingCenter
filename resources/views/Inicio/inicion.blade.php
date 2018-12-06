@@ -206,6 +206,7 @@ var listProduct = function()
    @include('Inicio.modalist')
 </div> 
 </section>
+@include('layouts/footer')
     </body>
 </html>
 @endsection
