@@ -11,7 +11,7 @@
 </head>
 <div class="container text-center">
 	<div class="page-header">
-		<h1><i class="fa fa-shopping-cart"></i> Detalle del producto</h1>
+		<h1><i class="fa fa-shopping-cart"></i> Detalle Factura</h1>
 	</div>
 	<div class="page">
 		<div class="table-responsive">
