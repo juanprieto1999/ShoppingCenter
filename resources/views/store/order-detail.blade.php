@@ -1,6 +1,11 @@
 @extends('layouts.encabezado')
 @section('content')
-
+<style >
+	body{
+		padding-top: 7%;
+	}
+</style>
+<body>
 <head>
 	 <link rel="stylesheet" href="{{asset('css/font-awesome.css')}}">
 </head>
@@ -57,4 +62,7 @@
 	</div>
 
 </div>
+
+
+</body>
 @endsection
