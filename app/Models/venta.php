@@ -15,6 +15,7 @@ class venta extends Model
 	'Fecha_Hora',
 	'Envio',
 	'Total_Venta',
-	'Direccion_Envio'
+	'Direccion_Envio',
+	'Forma_Pago'
 	];
 }

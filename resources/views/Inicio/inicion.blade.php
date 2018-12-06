@@ -20,7 +20,12 @@
 
              .carousel-inner img {
               width: 100%;
-              height: 656px;
+              
+                background-color: rgba(0,0,0,0.67);
+              
+              height: 665px;
+              max-width: 100%;
+              filter:brightness(0.4);
 
               
               }
@@ -73,13 +78,7 @@
             #color{
               color: rgba(0, 0, 0, 0.67);
             }
-            #imagen1{
-              background-color: rgba(0,0,0,0.8);
-  background-image:url({{ asset('Imagenes/imgnueva.jpg') }});
-  height: 500px;
-  max-width: 100%;
-  filter:brightness(0.4);
-            }
+           
             
         </style>
   <script>
@@ -116,9 +115,9 @@ var listProduct = function()
             <li data-target="#demo" data-slide-to="2"></li>
             <li data-target="#demo" data-slide-to="3"></li>
           </ul>
-          <divid="color" class="carousel-inner">
-            <div id="imagen1" class="carousel-item active">
-          
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+           <img src="{{ asset('Imagenes/imgnueva.jpg') }}" alt="moda" >
               <div class="carousel-caption">
                 <div class="flex-center position-ref full-height">
                     <div class="content">
