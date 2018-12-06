@@ -6,5 +6,6 @@ h1{
 }
 nav{
 	border-bottom: groove;
-	background-color: rgba(22, 22, 22, 0.38);
+	/*background-color: rgba(22, 22, 22, 0.38);*/
+	  filter:brightness(0.7);
 }
