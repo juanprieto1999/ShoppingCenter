@@ -73,6 +73,13 @@
             #color{
               color: rgba(0, 0, 0, 0.67);
             }
+            #imagen1{
+              background-color: rgba(0,0,0,0.8);
+  background-image:url({{ asset('Imagenes/imgnueva.jpg') }});
+  height: 500px;
+  max-width: 100%;
+  filter:brightness(0.4);
+            }
             
         </style>
   <script>
@@ -103,33 +110,33 @@ var listProduct = function()
       @endif
       <section>
         <div id="demo" class="carousel slide" data-ride="carousel">
-  <ul class="carousel-indicators">
-    <li data-target="#demo" data-slide-to="0" class="active"></li>
-    <li data-target="#demo" data-slide-to="1"></li>
-    <li data-target="#demo" data-slide-to="2"></li>
-    <li data-target="#demo" data-slide-to="3"></li>
-  </ul>
-  <div id="color" class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="{{ asset('Imagenes/imgnueva.jpg') }}" alt="ShoppingCenter">
-      <div class="carousel-caption">
-        <div class="flex-center position-ref full-height">
-            <div class="content">
-                <div class="title m-b-md">
-                    Shopping Center
+          <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+            <li data-target="#demo" data-slide-to="3"></li>
+          </ul>
+          <divid="color" class="carousel-inner">
+            <div id="imagen1" class="carousel-item active">
+          
+              <div class="carousel-caption">
+                <div class="flex-center position-ref full-height">
+                    <div class="content">
+                        <div class="title m-b-md">
+                            Shopping Center
+                        </div>
+                        
+
+                        <div class="links">
+                            <a href='javascript:;' onclick="listProduct();" data-toggle="modal" data-target="#modal-listatiendas" >Tiendas</a>
+                            <a href="https://laravel-news.com">Lo mas vendido!</a>
+                            <a href="https://nova.laravel.com">Promociones</a>
+                        </div>                     
+                    </div>
+
                 </div>
-                
-
-                <div class="links">
-                    <a href='javascript:;' onclick="listProduct();" data-toggle="modal" data-target="#modal-listatiendas" >Tiendas</a>
-                    <a href="https://laravel-news.com">Lo mas vendido!</a>
-                    <a href="https://nova.laravel.com">Promociones</a>
-                </div>                     
+              </div>   
             </div>
-
-        </div>
-      </div>   
-    </div>
 
     <div class="carousel-item">
       <img src="{{ asset('Imagenes/tecnologia.jpg') }}" alt="moda" >
