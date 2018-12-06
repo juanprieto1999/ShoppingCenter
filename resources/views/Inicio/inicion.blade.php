@@ -21,11 +21,11 @@
              .carousel-inner img {
               width: 100%;
               
-                background-color: rgba(0,0,0,0.67);
+              /*  background-color: rgba(0, 0, 0, 0.16);*/
               
               height: 665px;
               max-width: 100%;
-              filter:brightness(0.4);
+              filter:brightness(0.7);
 
               
               }
