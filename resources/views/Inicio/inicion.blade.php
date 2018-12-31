@@ -1,46 +1,32 @@
 @extends('layouts.encabezado')
 @section('content')
 <head>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!-- Bootstrap Y ajax en encabezado.blade.php-->
         <script src="{{ asset('js/jquery-3.3.1.min.js') }}" ></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
        
         <style>
             html, body {
-               /*background-image: url(/imagen/wal22.jpg);*/
-               background-color: white;
-                color: black;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
                 height: 100vh;
                }
-
              .carousel-inner img {
-              width: 100%;
-              
-              /*  background-color: rgba(0, 0, 0, 0.16);*/
-              
+              width: 100%;              
               height: 665px;
               max-width: 100%;
               filter:brightness(0.7);
-
-              
               }
 
             .full-height {
                 height: 100vh;
             }
-
             .flex-center {
                 align-items: center;
                 display: flex;
                 justify-content: center;
-
             }
-
             .position-ref {
                 position: relative;
             }
@@ -69,44 +55,21 @@
                 letter-spacing: .1rem;
                 text-decoration: none;
                 text-transform: uppercase;
-
             }
-
             .m-b-md {
                 margin-bottom: 30px;
             }
             #color{
               color: rgba(0, 0, 0, 0.67);
-            }
-           
-            
+            }            
         </style>
-  <script>
-   
-var listProduct = function()
-  {
-  
-      $.ajax({
-          type:'get',
-          url:'{{ url('/liststores')}}',
-          success: function(data){
-              $('#lista-tiendas').empty().html(data);
-          }
-      });
-
-
-  }
-
-
- </script>
-
-
-
     </head>
     <body>
+      <!--Mensaje compea realizada-->
       @if(\Session::has('message'))
           @include('store.partials.message')
       @endif
+      <!---->
       <section>
         <div id="demo" class="carousel slide" data-ride="carousel">
           <ul class="carousel-indicators">
@@ -207,6 +170,18 @@ var listProduct = function()
 </div> 
 </section>
 @include('layouts/footer')
+  <script>   
+var listProduct = function()
+  {
+      $.ajax({
+          type:'get',
+          url:'{{ url('/liststores')}}',
+          success: function(data){
+              $('#lista-tiendas').empty().html(data);
+          }
+      });
+  }
+ </script>
     </body>
 </html>
 @endsection

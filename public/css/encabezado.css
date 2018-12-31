@@ -9,6 +9,28 @@ nav{
 	background-color:rgba(0, 0, 0, 0.04);
 	  /*filter:brightness(0.7);
 */}
-#buscador{
+/*#buscador{
 	margin-left: 80%;
 }
+*/
+@media (max-width: 576px) { 
+.nav-item {
+display: none;
+}
+.nav-mov-1{
+position: absolute;
+top: 4px;
+right:  4px;
+margin: 1px;
+}
+.nav-mov-2{
+position: absolute;
+top: 4px;
+right:  32px;
+}
+#buscador{
+	margin-top: 8px; 
+}
+
+
+ }

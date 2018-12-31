@@ -19,16 +19,15 @@ Route::get('/ban', function () {
     return view('ban');
 });
 
+Route::get('/prueba', function () {
+    return view('Pruebas/index');
+});
+
 Auth::routes();
-
-
 // Route::get('/pdf', function () {
 // $pdf = PDF::loadView('Gestion.facturacliente');
 // return $pdf->stream();
 // });
-
-
-
 // Route::get('/pdf/{factura}/download', function ($factura) {
 // $pdf = PDF::loadView('Gestion.facturacliente',['factura'=>$factura]);
 // return $pdf->stream();
@@ -44,7 +43,7 @@ Route::get('/account', 'userController@profile_edit')->name('useraccount');
 
 Route::middleware('Usuariom')->group(function(){
 Route::resource('/account/user', 'userController')->except('index'); //Configuracion De Cuenta
-Route::get('/dashuser', 'DashBoardUserController@index');
+Route::get('/dashuser', 'DashBoardUserController@index')->name('dashuser');
 Route::get('/mispedidos', 'pedidocontroller@index')->name('mispedidos');
 });
 
