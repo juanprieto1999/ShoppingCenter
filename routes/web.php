@@ -61,10 +61,11 @@ Route::get('/dashadmin', 'DashBoardAdminController@index');
 Route::get('/dashadmin/stores', 'DashBoardAdminController@tindex');
 Route::resource('/dashadmin/users', 'userController');
 Route::resource('store', 'storeController');
+Route::resource('dashadmin/categorias', 'categoriacontroller');
 
 });
 
-Route::resource('dashadmin/categorias', 'categoriacontroller');
+
 
 
 Route::bind('product',function($id){

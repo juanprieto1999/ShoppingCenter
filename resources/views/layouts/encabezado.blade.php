@@ -44,7 +44,7 @@ function medidas(id){
         <a href="/"><img src="{{asset('Imagenes/Logo.png')}}" width="45%" align="left"></a>
       </div>
 
-      {!! Form::open(array('url'=>'/serch','method'=>'GET','autocomplete'=>'off','role'=>'search')) !!}
+      {!! Form::open(array('url'=>'/search','method'=>'GET','autocomplete'=>'off','role'=>'search')) !!}
       <div  class="form-group" id="buscar">
         <div id="buscador" class="input-group">
           <input type="search"  class="form-control mr-2" name="searchText" placeholder="Buscar.."> 
