@@ -36,7 +36,7 @@ Auth::routes();
 Route::get('/registro/{tipo}','Auth\RegisterController@showRegistrationForm');
 Route::get('store/{id}','storeController@index')->where(['id' => '[\d]+']); //Ruta para una tienda, validando que sea un id.
 Route::get('/liststores', 'inicioController@listatiendas'); //Ruta para listar las tiendas en el modal.
-Route::resource('/serch', 'searchController'); //Ruta para la busqueda inteligente en toda la tienda.
+Route::resource('/search', 'searchController'); //Ruta para la busqueda inteligente en toda la tienda.
 Route::resource('/store', 'searchController');
 Route::get('/account', 'userController@profile_edit')->name('useraccount');
 
