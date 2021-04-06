@@ -14,8 +14,7 @@
                }
              .carousel-inner img {
               width: 100%;              
-              height: 665px;
-              max-width: 100%;
+              height: 525px;
               filter:brightness(0.7);
               }
 
@@ -183,5 +182,5 @@ var listProduct = function()
   }
  </script>
     </body>
-</html>
+
 @endsection

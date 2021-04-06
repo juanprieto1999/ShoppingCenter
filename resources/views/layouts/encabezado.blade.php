@@ -2,11 +2,14 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximun-scale=1.0, minimun-scale=1.0">﻿
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximun-scale=1.0, minimun-scale=1.0">
     <title>Shopping Center - DEVELOP</title>
     <link rel="stylesheet" href="{{ asset('css/encabezado.css') }}">
+    <!--AJAX-->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js" type="text/javascript"></script>
+    <!--BOOTSTRAP-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!--FONDOS-->
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
   </head>
@@ -42,7 +45,7 @@ function medidas(id){
       </div>
 
       {!! Form::open(array('url'=>'/serch','method'=>'GET','autocomplete'=>'off','role'=>'search')) !!}
-      <div  class="form-group">
+      <div  class="form-group" id="buscar">
         <div id="buscador" class="input-group">
           <input type="search"  class="form-control mr-2" name="searchText" placeholder="Buscar.."> 
             <button type="submit" class="btn btn-primary">Buscar</button> 

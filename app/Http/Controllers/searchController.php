@@ -20,7 +20,7 @@ class searchController extends Controller
    		return view('Inicio/search',compact('articulos'));*/
 
    	$query=trim($request->get('searchText'));  //Trim , traemos los datos del request.
-$condicion="";
+    $condicion="";
 		$articulos=DB::table('articulo as a')
     	->join('categoria as c','a.idCategoria','=','c.idCategoria') //Relacionar 2 tablas.
     	->join('empresa as emp','a.idEmpresa','=','emp.idEmpresa')

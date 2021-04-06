@@ -13,7 +13,7 @@ nav{
 	margin-left: 80%;
 }
 */
-@media (max-width: 576px) { 
+@media (max-width: 575.98px) { 
 .nav-item {
 display: none;
 }
@@ -31,6 +31,26 @@ right:  32px;
 #buscador{
 	margin-top: 8px; 
 }
-
+ }
+@media (min-width: 576px) and (max-width: 767.98px){ 
+.nav-item {
+display: none;
+}
+.nav-mov-1{
+position: absolute;
+top: 32px;
+right:  4px;
+margin: 1px;
+}
+.nav-mov-2{
+position: absolute;
+top: 32px;
+right:  32px;
+}
+#buscar{
+position: absolute;
+top: 3px;
+right: 10px;
+}
 
  }

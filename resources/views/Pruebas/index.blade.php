@@ -1,91 +1,189 @@
-<!DOCTYPE html>
-<html lang="es">
+@extends('layouts.encabezado')
+@section('content')
 <head>
-	<meta charset="UTF-8">
-	<title>Menu</title>
-	<link rel="stylesheet" href="{{ asset('css/encabezado.css') }}">
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+        <!-- Bootstrap Y ajax en encabezado.blade.php-->
+        <script src="{{ asset('js/jquery-3.3.1.min.js') }}" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+       
+        <style>
+            html, body {
+                font-family: 'Nunito', sans-serif;
+                font-weight: 200;
+                height: 100vh;
+               }
+             
 
+               @media (min-width:768px){
+              .carousel-inner img {
+                 height: 500px;   
+              }
+               }
+           .carousel-inner img {
+              width: 100%;              
+              filter:brightness(0.7);
+              }
 
-{{-- 	<link rel="stylesheet" href="{{ asset('css/Pruebas/estilo.css') }}">
-	<link rel="stylesheet" href="fonts.css">
-	<script src="http://code.jquery.com/jquery-latest.js"></script> --}}
-{{-- 	<script src="{{ asset('js/Pruebas/main.js') }}"></script> --}}
-</head>
-<body>
-<header>
-		{{-- <div class="menu_bar">
-			<a href="#" class="bt-menu"><span class="icon-list2"></span>Menú</a>
-		</div>
-		<nav>
-			<ul>
-				<li><a href="#"><span class="icon-house"></span>Inicio</a></li>
-				<li><a href="#"><span class="icon-suitcase"></span>Trabajos</a></li>
-				<li class="submenu">
-					<a href="#"><span class="icon-rocket"></span>Proyectos<span class="caret icon-arrow-down6"></span></a>
-					<ul class="children">
-						<li><a href="#">SubElemento #1 <span class="icon-dot"></span></a></li>
-						<li><a href="#">SubElemento #2 <span class="icon-dot"></span></a></li>
-						<li><a href="#">SubElemento #3 <span class="icon-dot"></span></a></li>
-					</ul>
-				</li>
-				<li><a href="#"><span class="icon-earth"></span>Servicios</a></li>
-				<li><a href="#"><span class="icon-mail"></span>Contacto</a></li>
-			</ul>
-		</nav> --}}
+            .full-height {
+                height: 100vh;
+            }
+            .flex-center {
+                align-items: center;
+                display: flex;
+                justify-content: center;
+            }
+            .position-ref {
+                position: relative;
+            }
 
- <nav  class="navbar fixed-top navbar-expand-lg navbar-light  ">
-      <div id="titulo"  >         
-        <a href="/"><img src="{{asset('Imagenes/Logo.png')}}" width="45%" align="left"></a>
-      </div>
+            .top-right {
+                position: absolute;
+                right: 10px;
+                top: 18px;
+            }
 
-      {!! Form::open(array('url'=>'/serch','method'=>'GET','autocomplete'=>'off','role'=>'search')) !!}
-    	<div  class="form-group">
-        <div id="buscador" class="input-group">
-          <input type="search"  class="form-control mr-2" name="searchText" placeholder="Buscar.."> 
-            <button type="submit" class="btn btn-primary">Buscar</button>	
-        </div>
-      </div>
-      {!! Form::close() !!}
+            .content {
+                text-align: center;
+            }
 
-      <ul class="navbar-nav flex-row w-100 justify-content-end">
-        <a href="{{ route('cart-show') }}"><i class="fa fa-shopping-cart nav-mov-1" style="margin-top: 10px; font-size: 20px;"></i>
-        </a>
-        @guest 
-       	<a href="{{ route('login') }}"><i class="fa fa-user d-sm-block d-md-none nav-mov-2 "   style="margin-top: 10px; font-size: 20px;"></i>
-        </a>
-          <li class="nav-item px-2">
-            <a class="nav-link"  style="color:white" href="{{ route('login') }}">Iniciar Sesion</a>
-          </li>
-           <li class="nav-item px-2">
-            <a class="nav-link"  style="color:white" href="{{ url('/registro/user')}}">Registro</a>
-          </li>
-        @else
-        <a href="{{ route('login') }}"><i class="fa fa-user nav-mov" style="margin-top: 10px; font-size: 20px;"></i>
-        </a>
-      	<li class="nav-item px-2">
-            <label class="nav-label"> Bienvenido {{ Auth::user()->name }}</label>
-          </li>
-          <li class="nav-item px-2">
-            <a href="{{ route('logout') }}"
-               onclick="event.preventDefault();
-                             document.getElementById('logout-form').submit();">
-                {{ __('Cerrar Sesion') }}
-            </a>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                @csrf
-            </form>
+            .title {
+                font-size: 15vh;
+                -webkit-text-stroke-width: 2px;
+                -webkit-text-stroke-color: black;
+            }
 
-          </li>
-        @endguest
+            .links > a {
+                color: #636b6f;
+                padding: 0 25px;
+                font-size: 14px;
+                font-weight: 600;
+                letter-spacing: .1rem;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+           
+            #color{
+              color: rgba(0, 0, 0, 0.67);
+            }            
+        </style>
+    </head>
+    <body>
+      <!--Mensaje compea realizada-->
+      @if(\Session::has('message'))
+          @include('store.partials.message')
+      @endif
+      <!---->
+      <section>
+        <div id="demo" class="carousel slide" data-ride="carousel">
+          <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+            <li data-target="#demo" data-slide-to="3"></li>
           </ul>
-  </nav>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+           <img src="{{ asset('Imagenes/imgnueva.jpg') }}" alt="moda" >
+              <div class="carousel-caption">
+                <div class="flex-center position-ref full-height">
+                    <div class="content">
+                        <div class="title m-b-md">
+                            Shopping Center
+                        </div>
+                        
 
-		</header>	
-		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-</body>	
-</html>
+                        <div class="links">
+                            <a href='javascript:;' onclick="listProduct();" data-toggle="modal" data-target="#modal-listatiendas" >Tiendas</a>
+                            <a href="https://laravel-news.com">Lo mas vendido!</a>
+                            <a href="https://nova.laravel.com">Promociones</a>
+                        </div>                     
+                    </div>
+
+                </div>
+              </div>   
+            </div>
+
+    <div class="carousel-item">
+      <img src="{{ asset('Imagenes/tecnologia.jpg') }}" alt="moda" >
+      <div class="carousel-caption">
+          <div class="flex-center position-ref full-height">
+            <div class="content">
+                <div class="title m-b-md">
+                    Tecnologia
+                </div>
+                <div class="links">
+                    <a href="https://laravel.com/docs">Tiendas</a>
+                    <a href="https://laracasts.com">Productos</a>
+                    <a href="https://laravel-news.com">Lo mas vendido!</a>
+                    <a href="https://nova.laravel.com">Promociones</a>
+                    <a href="https://forge.laravel.com">Forge</a>
+                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                </div>
+            </div>
+        </div>
+      </div>   
+    </div>
+    <div class="carousel-item" id="informacion2">
+      <img src="{{ asset('Imagenes/comida1.jpg') }}" alt="Bebidas">
+      <div class="carousel-caption">
+         <div class="flex-center position-ref full-height">
+            <div class="content">
+                <div class="title m-b-md">
+                    Comidas
+                </div>
+                <div class="links">
+                    <a href="https://laravel.com/docs">Tiendas</a>
+                    <a href="https://laracasts.com">Productos</a>
+                    <a href="https://laravel-news.com">Lo mas vendido!</a>
+                    <a href="https://nova.laravel.com">Promociones</a>
+                    <a href="https://forge.laravel.com">Forge</a>
+                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                </div>
+            </div>
+        </div>
+      </div>   
+    </div>
+    <div class="carousel-item">
+      <img src="{{ asset('Imagenes/tienda2.jpg') }}" alt="moda" >
+      <div class="carousel-caption">
+          <div class="flex-center position-ref full-height">
+            <div class="content">
+                <div class="title m-b-md">
+                    Moda y Estilo
+                </div>
+                
+
+                <div class="links">
+                    <a href="https://laravel.com/docs">Tiendas</a>
+                    <a href="https://laracasts.com">Productos</a>
+                    <a href="https://laravel-news.com">Lo mas vendido!</a>
+                </div>
+            </div>
+        </div>
+      </div>   
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+   @include('Inicio.modalist')
+</div> 
+</section>
+@include('layouts/footer')
+  <script>   
+var listProduct = function()
+  {
+      $.ajax({
+          type:'get',
+          url:'{{ url('/liststores')}}',
+          success: function(data){
+              $('#lista-tiendas').empty().html(data);
+          }
+      });
+  }
+ </script>
+    </body>
+@endsection
